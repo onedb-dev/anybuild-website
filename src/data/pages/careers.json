@@ -1,0 +1,82 @@
+{
+  "title": "Careers — Anybuild",
+  "description": "Build enterprise software infrastructure with Anybuild. Explore roles, expectations, and benefits.",
+  "includeHeroScript": false,
+  "hero": {
+    "kicker": "Careers",
+    "headlineHtml": "Careers at Anybuild",
+    "copyHtml": "Join a team building model-driven software infrastructure for real-world enterprise operations."
+  },
+  "intro": {
+    "title": "Build systems that matter",
+    "paragraphs": [
+      "Anybuild is growing and hiring engineers and product contributors who want to work on complex software platforms with practical business impact.",
+      "Current hiring focus includes Front-End, Back-End, DevOps, and Product Design roles. Core teams are based in Belgrade and Lisbon. Remote for all with occasional office needs.",
+      "We value high standards, structured problem solving, and ownership across delivery and long-term platform evolution."
+    ],
+    "skillsTitle": "Relevant expertise includes",
+    "skills": [
+      "Relational database fundamentals and SQL",
+      "HTML, CSS, JavaScript, and TypeScript",
+      "Kubernetes, Linux, and cloud platform operations",
+      "AI-assisted workflows and applied RAG patterns",
+      "Enterprise software architecture and performance engineering",
+      "Business applications across ERP and CRM domains"
+    ],
+    "visualTitle": "Talent and impact",
+    "visualCopy": "Work on infrastructure, platform capabilities, and applied product systems used in production.",
+    "visualBullets": [
+      "Platform and runtime engineering",
+      "Product delivery for enterprise customers",
+      "Operational reliability and scale"
+    ]
+  },
+  "careersInquiry": {
+    "title": "Introduce yourself",
+    "copy": "Share your background and what you want to work on. We review every inquiry.",
+    "label": "Start a careers inquiry",
+    "href": "careers-inquiry.html"
+  },
+  "benefits": {
+    "title": "Career Benefits",
+    "items": [
+      {
+        "title": "Flexible Conditions",
+        "copy": "Flexible location and collaboration model, with clear accountability and high professional standards."
+      },
+      {
+        "title": "Make an Impact",
+        "copy": "Contribute directly to platform and product outcomes that influence how enterprise software is built."
+      },
+      {
+        "title": "AI Expertise",
+        "copy": "Build practical AI capabilities into production systems while improving quality, speed, and reliability."
+      },
+      {
+        "title": "Competitive Compensation",
+        "copy": "Compensation aligns with experience, role scope, and long-term contribution to product and platform growth."
+      },
+      {
+        "title": "Challenging Work",
+        "copy": "Solve non-trivial architecture and delivery problems with room for deep technical and product ownership."
+      },
+      {
+        "title": "High-Caliber Team",
+        "copy": "Collaborate with experienced builders across engineering, product, and commercial functions."
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "title": "Interested in joining Anybuild?",
+    "copyHtml": "Send a short careers inquiry or reach out for a general question.",
+    "primary": {
+      "label": "Start a careers inquiry",
+      "href": "careers-inquiry.html"
+    },
+    "secondary": {
+      "label": "Contact",
+      "href": "contact.html"
+    }
+  }
+}

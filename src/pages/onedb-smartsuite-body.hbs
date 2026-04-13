@@ -1,0 +1,136 @@
+<div class="page-smartsuite">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+      <div class="cta-row">
+        <a class="btn primary" href="{{hero.primary.href}}">{{hero.primary.label}}</a>
+        <a class="btn secondary" href="{{hero.secondary.href}}">{{hero.secondary.label}}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{businessSystem.id}}">
+    <div class="container page-smartsuite-split">
+      <div>
+        <div class="section-header">
+          <h2>{{businessSystem.title}}</h2>
+          <p class="section-copy">{{{businessSystem.copyHtml}}}</p>
+        </div>
+      </div>
+      <div class="card page-smartsuite-visual">
+        <h3>{{businessSystem.visualTitle}}</h3>
+        <p>{{businessSystem.visualCopy}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{capabilities.id}}">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{capabilities.title}}</h2>
+      </div>
+      <div class="page-smartsuite-capabilities">
+        {{#each capabilities.items}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{erp.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{erp.label}}</div>
+        <h2>{{erp.title}}</h2>
+      </div>
+
+      <div class="page-smartsuite-split page-smartsuite-feature">
+        <div class="copy-block">
+          <h3>{{erp.summary.title}}</h3>
+          <p>{{{erp.summary.copyHtml}}}</p>
+        </div>
+        <div class="card page-smartsuite-visual">
+          <h3>{{erp.summary.visualTitle}}</h3>
+          <p>{{erp.summary.visualCopy}}</p>
+        </div>
+      </div>
+
+      <div class="page-smartsuite-feature-grid">
+        {{#each erp.featureCards}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="page-smartsuite-split page-smartsuite-feature page-smartsuite-deep-row">
+        <div class="page-smartsuite-deep-text copy-block">
+          <h3>{{erp.deepDive.generalLedger.title}}</h3>
+          <p>{{{erp.deepDive.generalLedger.copyHtml}}}</p>
+        </div>
+        <div class="page-smartsuite-deep-text copy-block">
+          <h3>{{erp.deepDive.operations.title}}</h3>
+          <p>{{{erp.deepDive.operations.copyHtml}}}</p>
+        </div>
+      </div>
+
+      <div class="card page-smartsuite-modules" id="{{erp.deepDive.modules.id}}">
+        <h3>{{erp.deepDive.modules.title}}</h3>
+        <div class="page-smartsuite-module-list">
+          {{#each erp.deepDive.modules.items}}
+            <p><strong>{{name}}</strong> - {{copy}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{crm.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{crm.label}}</div>
+        <h2>{{crm.title}}</h2>
+      </div>
+      <div class="page-smartsuite-split page-smartsuite-feature">
+        <div class="copy-block">
+          <h3>{{crm.partOne.title}}</h3>
+          <p>{{{crm.partOne.copyHtml}}}</p>
+        </div>
+        <div class="card page-smartsuite-visual">
+          <h3>{{crm.partOne.visualTitle}}</h3>
+          <p>{{crm.partOne.visualCopy}}</p>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h3>{{crm.featuresTitle}}</h3>
+      </div>
+      <div class="page-smartsuite-feature-grid">
+        {{#each crm.featureCards}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

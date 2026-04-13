@@ -1,0 +1,209 @@
+{
+  "title": "Onedb Smartsuite — Anybuild",
+  "description": "Onedb Smartsuite unifies ERP and CRM on one model-driven system with shared data, automation, and extensible business capabilities.",
+  "includeHeroScript": false,
+  "inpageNav": [
+    { "label": "Overview", "href": "#business-system" },
+    { "label": "Capabilities", "href": "#capabilities" },
+    { "label": "ERP", "href": "#erp" },
+    { "label": "CRM", "href": "#crm" },
+    { "label": "Get started", "href": "#cta" }
+  ],
+  "hero": {
+    "kicker": "Onedb Smartsuite",
+    "headlineHtml": "Unified ERP and CRM<br />for operating systems",
+    "copyHtml": "Run ERP and CRM on one model-driven foundation.<br />Share entities across front and back office, automate workflows, and extend safely over time.",
+    "primary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    }
+  },
+  "businessSystem": {
+    "id": "business-system",
+    "title": "Business Operating System",
+    "copyHtml": "Onedb Smartsuite seamlessly combines ERP and CRM into a single application and database.<br />Sharing entities between front and back office brings consistency, accuracy, speed, and ease of use.<br />Anybuild can reuse the same entities as a foundation for integrated line-of-business applications.",
+    "visualTitle": "Shared entities",
+    "visualCopy": "One model for transactions, customers, products, and workflows across operations."
+  },
+  "capabilities": {
+    "id": "capabilities",
+    "title": "Comprehensive Capability",
+    "items": [
+      {
+        "title": "ERP",
+        "copy": "Accounting, logistics, billing, purchasing, projects, inventory, cash, assets, HR, tax, reporting, and analytics."
+      },
+      {
+        "title": "CRM",
+        "copy": "Sales automation, service cases, marketing campaigns, dashboards, AI-assisted data capture, and forecasting."
+      }
+    ]
+  },
+  "erp": {
+    "id": "erp",
+    "label": "ERP",
+    "title": "Onedb ERP",
+    "band": {
+      "label": "Next Generation Adaptable Business Suite",
+      "title": "Onedb ERP",
+      "cta": {
+        "label": "Watch video",
+        "href": "demo.html"
+      }
+    },
+    "summary": {
+      "title": "Business Operating System",
+      "copyHtml": "Onedb ERP helps run operations more effectively and efficiently.<br />It reduces compliance burden, improves visibility, and supports proactive decision making through real-time monitoring.",
+      "visualTitle": "Connected operations",
+      "visualCopy": "One flow for finance, operations, and fulfillment."
+    },
+    "featureCards": [
+      {
+        "title": "Information is Power",
+        "copy": "Real-time P&L, balance sheet, cashflow, proactive exception reporting, and alerts."
+      },
+      {
+        "title": "One Database",
+        "copy": "Single source of truth with seamlessly integrated CRM for consistency, accuracy, and efficiency."
+      },
+      {
+        "title": "SAP, Oracle, Dynamics...",
+        "copy": "Avoid rigid process constraints. Onedb adapts to your way of working."
+      },
+      {
+        "title": "Easy to customize",
+        "copy": "Extend rapidly with unique capabilities that create competitive advantage."
+      },
+      {
+        "title": "Process Automation",
+        "copy": "Automate recurring billing, timesheets, and workflow-driven operations."
+      },
+      {
+        "title": "Linked Transactions",
+        "copy": "Automatic flow from quote to order to invoice to cash without rekeying."
+      },
+      {
+        "title": "AI Components",
+        "copy": "AI-assisted OCR data capture and automation for faster execution."
+      },
+      {
+        "title": "Comprehensive Capability",
+        "copy": "SOP, POP, BOM, inventory, RM, PM, GL, BR, HR, projects, assets, and more."
+      },
+      {
+        "title": "Business Intelligence",
+        "copy": "Powerful reporting, analytics, graphical report design, and SQL mode."
+      },
+      {
+        "title": "Deep Integrations",
+        "copy": "Connect external data sources, API tools, and AI MCP services."
+      }
+    ],
+    "deepDive": {
+      "generalLedger": {
+        "title": "Advanced General Ledger",
+        "copyHtml": "At the heart of Onedb ERP is an advanced general ledger for statutory and consolidated multi-currency accounts.<br />Use multi-dimensional analysis, real-time trial balance, automated future postings, and full audit trail with drill-down to source transactions."
+      },
+      "operations": {
+        "title": "Operations Support",
+        "copyHtml": "Support service, distribution, and manufacturing with accurate tracking, billing, costing, and cashflow optimization.<br />Automated statements, reminders, reconciliations, forecasts, alerts, and exception reports help maintain control and margins."
+      },
+      "modules": {
+        "id": "erp-modules",
+        "title": "ERP Modules",
+        "items": [
+          { "name": "Parties", "copy": "Organizations, people, contacts, and org charts." },
+          { "name": "Items", "copy": "Line items, products, goods, services, expenses, and categories." },
+          { "name": "POP", "copy": "Purchase orders, invoices, matching, and GRNs." },
+          { "name": "SOP", "copy": "Sales quotes, orders, invoices, matching, and price lists." },
+          { "name": "AR", "copy": "Accounts receivable, customers, and cash reconciliations." },
+          { "name": "AP", "copy": "Accounts payable, suppliers, and cash reconciliations." },
+          { "name": "Cash", "copy": "Statements, receipts, payments, and reconciliations." },
+          { "name": "Inventory", "copy": "Stock management, warehouses, BOMs, and FIFO costing." },
+          { "name": "GL", "copy": "General ledger, multi-currency, multi-dimensional, and drill-down." },
+          { "name": "Budgets", "copy": "Unlimited budgets, forecasts, and variance reporting." },
+          { "name": "Projects", "copy": "Stages, tasks, revenue recognition, and project accounting." },
+          { "name": "Jobs", "copy": "Job costing and project accounting." },
+          { "name": "Timesheets", "copy": "Time recording for billing and operations." },
+          { "name": "RB", "copy": "Recurring billing, subscriptions, and linked timesheets." },
+          { "name": "HR", "copy": "Payroll, absences, recruitment, onboarding, and reviews." },
+          { "name": "Analytics", "copy": "User-defined dimensions, categories, tags, and business units." },
+          { "name": "BI", "copy": "Graphical reports, function/view designer, and optional SQL." },
+          { "name": "Workflows", "copy": "Standard approvals plus unlimited user-defined workflows." },
+          { "name": "Security", "copy": "Flexible user context by company with granular row-level security." }
+        ]
+      }
+    }
+  },
+  "crm": {
+    "id": "crm",
+    "label": "CRM",
+    "title": "Onedb CRM",
+    "partOne": {
+      "title": "Find and Nurture Opportunities",
+      "copyHtml": "Leads and opportunities are precious. Onedb CRM helps uncover, nurture, progress, and close them.<br />Leads to prospects to customers. Opportunities to deals to invoices. Automated sales workflows keep momentum.<br />AI and BI for sales intelligence helps discover patterns, monitor performance, and trigger alerts.",
+      "visualTitle": "Pipeline and loyalty",
+      "visualCopy": "Convert opportunities and build long-term customer loyalty with connected workflows."
+    },
+    "featuresTitle": "CRM Features",
+    "featureCards": [
+      {
+        "title": "Information is Power",
+        "copy": "Real-time P&L, balance sheet, cashflow, proactive exception reporting, and alerts."
+      },
+      {
+        "title": "One Database",
+        "copy": "One source of truth with integrated CRM for consistency, accuracy, and efficiency."
+      },
+      {
+        "title": "Salesforce, Hubspot, Dynamics...",
+        "copy": "Avoid imposed processes. Onedb adapts to your own way of working."
+      },
+      {
+        "title": "Easy to customize",
+        "copy": "Extend CRM with unique capabilities to gain competitive edge."
+      },
+      {
+        "title": "Process Automation",
+        "copy": "Automate service workflows, recurring billing, and case assignments."
+      },
+      {
+        "title": "Linked Transactions",
+        "copy": "Automatic flow from quote to order to invoice to cash."
+      },
+      {
+        "title": "AI Data Capture",
+        "copy": "Capture data from meetings and notes, generate proposals, and update calendar or email actions."
+      },
+      {
+        "title": "Comprehensive Capability",
+        "copy": "Sales automation, service case handling, and marketing campaign management."
+      },
+      {
+        "title": "Superior Business Intelligence",
+        "copy": "Powerful analytics, report design, and SQL-enabled views."
+      },
+      {
+        "title": "Integrations",
+        "copy": "Email, chat, calendars, MS Office, Google Docs, WhatsApp, and API tools."
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "title": "Build with Onedb Smartsuite",
+    "copyHtml": "Run ERP and CRM on a shared platform model, automate operations, and extend safely as your business evolves.",
+    "primary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="page-faq">
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container faq-list">
+      <div class="faq-search">
+        <input
+          type="search"
+          class="faq-search-input"
+          placeholder="Search FAQ..."
+          aria-label="Search FAQ questions and answers"
+          data-faq-search-input
+        />
+        <button type="button" class="faq-search-clear" data-faq-search-clear hidden>Clear</button>
+      </div>
+
+      {{#each faqItems}}
+        <details class="faq-item" data-faq-item data-faq-search="{{question}} {{answer}}">
+          <summary>{{question}}</summary>
+          <div class="faq-answer">
+            <p>{{answer}}</p>
+          </div>
+        </details>
+      {{/each}}
+
+      <div class="faq-empty" data-faq-empty hidden>
+        No results found. Try a different keyword.
+      </div>
+    </div>
+  </section>
+</div>

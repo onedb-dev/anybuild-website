@@ -1,0 +1,19 @@
+<section id="{{id}}">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{title}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="contrast-grid">
+      {{#each contrasts}}
+        <div class="contrast-card">
+          <small>{{eyebrow}}</small>
+          <strong>{{{headlineHtml}}}</strong>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

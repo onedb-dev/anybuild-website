@@ -1,0 +1,97 @@
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav-main" aria-label="Main">
+      <a class="brand" href="{{brand.href}}">
+        {{#if brand.useLogoImage}}
+          <img src="{{{brand.logoUrl}}}" alt="{{brand.name}}" style="height:{{brand.logoHeight}}px;" />
+        {{else}}
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>{{brand.name}}</span>
+        {{/if}}
+      </a>
+
+      <div class="nav-links">
+        {{#each nav.links}}
+          {{#if items}}
+            <div class="nav-group">
+              <button type="button" class="nav-group-trigger" aria-haspopup="true">
+                {{label}} <span aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-group-menu" role="menu" aria-label="{{label}}">
+                {{#each items}}
+                  <a class="nav-group-item" href="{{href}}" role="menuitem">
+                    <strong>{{label}}</strong>
+                    <span>{{description}}</span>
+                  </a>
+                {{/each}}
+              </div>
+            </div>
+          {{else}}
+            <a href="{{href}}">{{label}}</a>
+          {{/if}}
+        {{/each}}
+      </div>
+
+      <div class="nav-actions">
+        {{#each nav.actions}}
+          <a class="btn {{variant}}" href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-mobile-menu"
+        aria-label="Open menu"
+      >
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </nav>
+  </div>
+</div>
+
+<div class="nav-mobile" id="nav-mobile-menu" aria-hidden="true">
+  <div class="nav-mobile-backdrop" tabindex="-1"></div>
+  <div class="nav-mobile-sheet" role="dialog" aria-modal="true" aria-label="Main navigation">
+    <div class="nav-mobile-links">
+      {{#each nav.links}}
+        {{#if items}}
+          <div class="nav-mobile-group">
+            <button
+              type="button"
+              class="nav-mobile-group-toggle"
+              id="nav-mobile-toggle-{{@index}}"
+              aria-expanded="false"
+              aria-controls="nav-mobile-panel-{{@index}}"
+            >
+              <span>{{label}}</span>
+              <span class="nav-mobile-group-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-mobile-group-panel" id="nav-mobile-panel-{{@index}}" hidden>
+              {{#each items}}
+                <a class="nav-mobile-link nav-mobile-sublink" href="{{href}}">
+                  <strong>{{label}}</strong>
+                  <span>{{description}}</span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        {{else}}
+          <a class="nav-mobile-link" href="{{href}}">{{label}}</a>
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class="nav-mobile-actions">
+      {{#each nav.actions}}
+        <a class="btn {{variant}} nav-mobile-btn" href="{{href}}">{{label}}</a>
+      {{/each}}
+    </div>
+  </div>
+</div>

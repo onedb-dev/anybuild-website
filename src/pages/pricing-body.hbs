@@ -1,0 +1,150 @@
+<div class="page-pricing">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{hero.title}}</h1>
+      <p class="hero-copy">{{{hero.subtitleHtml}}}</p>
+    </div>
+  </section>
+
+  <section id="build-run">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{buildRun.title}}</h2>
+        <p class="section-copy">{{buildRun.lead}}</p>
+      </div>
+
+      <div class="card pricing-card">
+        <div class="pricing-card-head">
+          <div class="pricing-card-title">Plans</div>
+          <div class="pricing-badge">{{buildRun.badge}}</div>
+        </div>
+        <div class="pricing-table-wrap">
+          <table class="pricing-table" aria-label="Build and Run pricing table">
+            <thead>
+              <tr>
+                <th></th>
+                {{#each buildRun.columns}}
+                  <th>{{this}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#each buildRun.rows}}
+                <tr>
+                  <th>{{label}}</th>
+                  {{#each cells}}
+                    <td>{{this}}</td>
+                  {{/each}}
+                </tr>
+              {{/each}}
+              <tr class="pricing-cta-row">
+                <th></th>
+                {{#each buildRun.ctas}}
+                  <td><a class="pricing-cta{{#if primary}} primary{{/if}}" href="{{href}}">{{label}}</a></td>
+                {{/each}}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="page-pricing-split">
+        <div class="card pricing-card pricing-info-card">
+          <div class="pricing-card-head"><div class="pricing-card-title">What these terms mean</div></div>
+          <div class="pricing-card-body">
+            {{#each explain.terms}}
+              <p>{{this}}</p>
+            {{/each}}
+          </div>
+        </div>
+        <div class="card pricing-card pricing-info-card">
+          <div class="pricing-card-head"><div class="pricing-card-title">How credits work</div></div>
+          <div class="pricing-card-body">
+            <p>{{explain.creditsIntro}}</p>
+            <ul>
+              {{#each explain.creditsList}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            <p><strong>{{explain.creditsRule}}</strong></p>
+            <p>{{explain.creditsNote}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scale-operate">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{scale.title}}</h2>
+        <p class="section-copy">{{scale.lead}}</p>
+      </div>
+      <div class="card pricing-card">
+        <div class="pricing-table-wrap">
+          <table class="pricing-table" aria-label="Scale and Operate pricing table">
+            <thead>
+              <tr>
+                <th></th>
+                {{#each scale.columns}}
+                  <th>{{this}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#each scale.rows}}
+                <tr>
+                  <th>{{label}}</th>
+                  {{#each cells}}
+                    <td>{{this}}</td>
+                  {{/each}}
+                </tr>
+              {{/each}}
+              <tr class="pricing-cta-row">
+                <th></th>
+                {{#each scale.ctas}}
+                  <td><a class="pricing-cta{{#if primary}} primary{{/if}}" href="{{href}}">{{label}}</a></td>
+                {{/each}}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="principles">
+        <div class="pricing-card-head"><div class="pricing-card-title">Platform principles</div></div>
+        <div class="pricing-card-body">
+          <ul>
+            {{#each principles}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+      <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="addons">
+        <div class="pricing-card-head"><div class="pricing-card-title">Add-ons</div></div>
+        <div class="pricing-card-body">
+          <ul>
+            {{#each addons}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

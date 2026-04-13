@@ -1,0 +1,27 @@
+<div class="page-resources">
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid-3 page-resources-grid">
+        {{#each items}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+            {{#if href}}
+              <a class="back" href="{{href}}">{{cta}}</a>
+            {{else}}
+              <span class="back">{{cta}}</span>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</div>

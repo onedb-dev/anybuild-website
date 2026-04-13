@@ -1,0 +1,109 @@
+{
+  "title": "About — Anybuild",
+  "description": "Anybuild is a model-driven platform by Onedb, shaped by years of ERP and CRM delivery in real business environments.",
+  "includeHeroScript": false,
+  "inpageNav": [
+    { "label": "Story", "href": "#story" },
+    { "label": "Today", "href": "#today" },
+    { "label": "Difference", "href": "#difference" },
+    { "label": "Leadership", "href": "#leadership" },
+    { "label": "Locations", "href": "#locations" }
+  ],
+  "hero": {
+    "kicker": "About",
+    "headlineHtml": "About Anybuild",
+    "copyHtml": "Anybuild is a model-driven platform for building business systems.<br />It is developed by Onedb, a company focused on ERP and CRM systems in real environments.",
+    "primary": {
+      "label": "Try for free",
+      "href": "try.html"
+    },
+    "secondary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    }
+  },
+  "sections": [
+    {
+      "id": "story",
+      "title": "Where it comes from",
+      "paragraphs": [
+        "The founders worked with ERP and CRM systems for years before Onedb. They saw recurring issues: complexity, high cost, difficult integrations, and rigid structures.",
+        "Onedb was formed in 2017 to address these problems. The initial goal was to build a better ERP and CRM system that could adapt to real business needs.",
+        "As the work progressed, it became clear that the underlying problem was not just the applications, but the system layer itself.",
+        "This led to the evolution of Anybuild - a platform not tied to a specific business application that defines how systems are built and run.",
+        "The rise of AI fits naturally into this approach. It accelerates system definition and reduces the learning curve, while the platform keeps structure, rules, and consistency in place."
+      ]
+    },
+    {
+      "id": "today",
+      "title": "What exists today",
+      "paragraphs": [
+        "The platform and applications are built together and evolve together.",
+        "<strong>Anybuild</strong><br />Model-driven platform that defines how systems are built and run.",
+        "<strong>Onedb Smartsuite</strong><br />ERP and CRM systems built in parallel and running on top of the platform in production.",
+        "The platform and applications were developed together. The platform defines the system. Onedb Smartsuite uses it in practice."
+      ]
+    },
+    {
+      "id": "difference",
+      "title": "How it is different",
+      "paragraphs": [
+        "Traditional systems are built per project. Each implementation starts again, even when the structure is similar.",
+        "Anybuild focuses on the system itself. A model defines how things work, and that model is extended over time.",
+        "The result is not a project deliverable. It is a system that continues to evolve."
+      ]
+    },
+    {
+      "id": "enables",
+      "title": "What it enables",
+      "paragraphs": [
+        "Business systems can be built quickly from scratch. They can also be reused, adapted, and extended without rebuilding everything.",
+        "Each client runs their own system instance. Systems can be cloned, adjusted, and distributed where needed.",
+        "The platform includes the system layer. Hosting, database, workflows, reporting, and security are already part of it."
+      ]
+    },
+    {
+      "id": "locations",
+      "title": "Locations",
+      "paragraphs": [
+        "Engineering teams are based in Lisbon and Belgrade.",
+        "Sales, consulting, and operations are based in London, Jersey, and Lisbon.",
+        "Systems are deployed on major cloud providers, with region-based hosting. This allows customers to choose where their data is located."
+      ]
+    }
+  ],
+  "leadership": {
+    "id": "leadership",
+    "title": "Leadership",
+    "people": [
+      {
+        "name": "Gary Clarke",
+        "roleHtml": "CEO<br />Enterprise systems and ERP",
+        "avatarLabel": "GC"
+      },
+      {
+        "name": "Vladimir Martinovic",
+        "roleHtml": "CTO<br />Platform and architecture",
+        "avatarLabel": "VM"
+      },
+      {
+        "name": "Johan Lundberg",
+        "roleHtml": "CRO<br />Enterprise sales",
+        "avatarLabel": "JL"
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "title": "See how Anybuild works",
+    "copyHtml": "From system model to running business software, everything is designed to evolve over time.",
+    "primary": {
+      "label": "Try for free",
+      "href": "try.html"
+    },
+    "secondary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    }
+  }
+}

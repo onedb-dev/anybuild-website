@@ -1,0 +1,21 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">{{kicker}}</div>
+
+      <h1>{{{headlineHtml}}}</h1>
+
+      <div class="subtagline">{{subtagline}}</div>
+
+      <p class="hero-copy">{{{copyHtml}}}</p>
+
+      <div class="hero-points">
+        {{#each pills}}
+          <span class="pill">{{this}}</span>
+        {{/each}}
+      </div>
+    </div>
+
+    {{> heroCard}}
+  </div>
+</section>

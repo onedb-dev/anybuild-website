@@ -1,0 +1,22 @@
+{
+  "title": "Support — Anybuild",
+  "description": "Get help with the Anybuild platform: log issues, describe impact, and we will route your request.",
+  "includeHeroScript": false,
+  "includeInquiryFormScript": true,
+  "hero": {
+    "kicker": "Support",
+    "headlineHtml": "Platform support",
+    "copyHtml": "Describe what you are seeing, the environment, and business impact so we can prioritize correctly."
+  },
+  "inquiryForm": {
+    "mode": "support",
+    "intent": "support",
+    "heading": "Support request",
+    "lead": "Include steps to reproduce, expected vs actual behaviour, and any error references you have.",
+    "submitLabel": "Submit support request",
+    "showPriority": true,
+    "subjectLabel": "Issue summary",
+    "messageLabel": "Description, steps to reproduce, and impact",
+    "organizationLabel": "Organization or account name (optional)"
+  }
+}

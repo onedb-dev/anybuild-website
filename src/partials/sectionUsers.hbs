@@ -1,0 +1,18 @@
+<section id="{{id}}">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{{titleHtml}}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="audience-grid">
+      {{#each audiences}}
+        <div class="audience-card">
+          <h4>{{title}}</h4>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

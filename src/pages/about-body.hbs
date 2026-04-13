@@ -1,0 +1,57 @@
+<div class="page-about">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+      <div class="cta-row">
+        <a class="btn primary" href="{{hero.primary.href}}">{{hero.primary.label}}</a>
+        <a class="btn secondary" href="{{hero.secondary.href}}">{{hero.secondary.label}}</a>
+      </div>
+    </div>
+  </section>
+
+  {{#each sections}}
+    <section id="{{id}}">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{title}}</h2>
+        </div>
+        <div class="page-about-copy">
+          {{#each paragraphs}}
+            <p>{{{this}}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+  {{/each}}
+
+  <section id="{{leadership.id}}">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{leadership.title}}</h2>
+      </div>
+      <div class="page-about-leadership">
+        {{#each leadership.people}}
+          <div class="card page-about-person">
+            <div class="page-about-avatar">{{avatarLabel}}</div>
+            <h3>{{name}}</h3>
+            <p>{{{roleHtml}}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

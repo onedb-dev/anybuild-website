@@ -1,0 +1,361 @@
+{
+  "title": "Pricing — Anybuild",
+  "description": "Predictable pricing for building and running production business applications. We price builders, applications, and automation, not end users.",
+  "includeHeroScript": false,
+  "inpageNav": [
+    {
+      "label": "Build & Run",
+      "href": "#build-run"
+    },
+    {
+      "label": "Scale & Operate",
+      "href": "#scale-operate"
+    },
+    {
+      "label": "Add-ons",
+      "href": "#addons"
+    }
+  ],
+  "hero": {
+    "kicker": "Anybuild",
+    "title": "Pricing",
+    "subtitleHtml": "<strong>Predictable pricing for building and running real applications.</strong><br />We price what creates complexity (builders, applications, automation), not how many people use your software."
+  },
+  "buildRun": {
+    "title": "Build & Run",
+    "lead": "For individuals and teams running real production applications.",
+    "badge": "Pro is recommended",
+    "columns": [
+      "Trial",
+      "Starter",
+      "Pro",
+      "Scale"
+    ],
+    "rows": [
+      {
+        "label": "Price",
+        "cells": [
+          "€0",
+          "€25 / mo",
+          "€60 / mo",
+          "€125 / mo"
+        ]
+      },
+      {
+        "label": "Builders",
+        "cells": [
+          "1",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "label": "Applications",
+        "cells": [
+          "Up to 2",
+          "Up to 3",
+          "Up to 5",
+          "Up to 10"
+        ]
+      },
+      {
+        "label": "Users",
+        "cells": [
+          "Unlimited",
+          "Unlimited",
+          "Unlimited",
+          "Unlimited"
+        ]
+      },
+      {
+        "label": "Environment",
+        "cells": [
+          "Shared (separate DBs)",
+          "Shared (separate DBs)",
+          "Shared (separate DBs)",
+          "Shared (separate DBs)"
+        ]
+      },
+      {
+        "label": "Storage",
+        "cells": [
+          "500 MB",
+          "2 GB",
+          "5 GB",
+          "15 GB"
+        ]
+      },
+      {
+        "label": "Performance & throughput",
+        "cells": [
+          "Standard",
+          "Standard",
+          "Enhanced",
+          "Enhanced"
+        ]
+      },
+      {
+        "label": "AI app & report generation",
+        "cells": [
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Automation workflows",
+        "cells": [
+          "—",
+          "UI-driven",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Public APIs & integrations",
+        "cells": [
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Included credits",
+        "cells": [
+          "500 (one-time)",
+          "2,000 / mo",
+          "10,000 / mo",
+          "25,000 / mo"
+        ]
+      },
+      {
+        "label": "Support",
+        "cells": [
+          "Community",
+          "Standard",
+          "Standard",
+          "Priority"
+        ]
+      }
+    ],
+    "ctas": [
+      {
+        "label": "Try free",
+        "href": "try.html",
+        "primary": false
+      },
+      {
+        "label": "Get started",
+        "href": "try.html",
+        "primary": false
+      },
+      {
+        "label": "Get started",
+        "href": "try.html",
+        "primary": true
+      },
+      {
+        "label": "Get started",
+        "href": "try.html",
+        "primary": false
+      }
+    ]
+  },
+  "explain": {
+    "terms": [
+      "Builders are the people who build and maintain applications (models, workflows, reports, AI).",
+      "Applications are independent business systems (e.g. CRM, HR, ERP, Compliance). Each application can have multiple UI portals.",
+      "Users are unlimited on all plans. We do not charge per user.",
+      "Environment is the runtime where your applications execute (compute + database + operational guarantees). Shared environments run on shared infrastructure with tenant isolation.",
+      "Storage includes application data and platform-managed metadata."
+    ],
+    "creditsIntro": "Credits are used when the platform does work for you:",
+    "creditsList": [
+      "AI application and report generation",
+      "Automation and background workflows",
+      "Integrations, APIs, and scheduled jobs"
+    ],
+    "creditsRule": "If a human clicks it, it is included. If the system runs it for you, it uses credits.",
+    "creditsNote": "Credits are not used for users accessing applications, UI portals, forms, pages, or standard CRUD actions."
+  },
+  "scale": {
+    "title": "Scale & Operate",
+    "lead": "For business-critical systems and high-volume automation.",
+    "columns": [
+      "Business",
+      "Advanced",
+      "Enterprise"
+    ],
+    "rows": [
+      {
+        "label": "Price",
+        "cells": [
+          "€495 / mo",
+          "€1,995 / mo",
+          "From €3,995 / mo"
+        ]
+      },
+      {
+        "label": "Builders",
+        "cells": [
+          "5",
+          "10",
+          "Custom"
+        ]
+      },
+      {
+        "label": "Applications",
+        "cells": [
+          "Up to 20",
+          "Unlimited",
+          "Unlimited"
+        ]
+      },
+      {
+        "label": "Users",
+        "cells": [
+          "Unlimited",
+          "Unlimited",
+          "Unlimited"
+        ]
+      },
+      {
+        "label": "Environment",
+        "cells": [
+          "Dedicated (reserved)",
+          "Dedicated (reserved)",
+          "Multiple / Isolated"
+        ]
+      },
+      {
+        "label": "Storage",
+        "cells": [
+          "50 GB",
+          "200 GB",
+          "Custom"
+        ]
+      },
+      {
+        "label": "Performance & throughput",
+        "cells": [
+          "Enhanced",
+          "High-throughput",
+          "High-throughput+"
+        ]
+      },
+      {
+        "label": "AI & automation",
+        "cells": [
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Scheduling (CRON)",
+        "cells": [
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Public APIs & integrations",
+        "cells": [
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Queues & async processing",
+        "cells": [
+          "Standard",
+          "Advanced",
+          "High-throughput"
+        ]
+      },
+      {
+        "label": "Audit logs",
+        "cells": [
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "label": "Included credits",
+        "cells": [
+          "50,000 / mo",
+          "150,000 / mo",
+          "300,000+ / mo"
+        ]
+      },
+      {
+        "label": "SLA",
+        "cells": [
+          "Business",
+          "Advanced",
+          "Custom"
+        ]
+      },
+      {
+        "label": "Support",
+        "cells": [
+          "Priority",
+          "Premium",
+          "Dedicated"
+        ]
+      }
+    ],
+    "ctas": [
+      {
+        "label": "Upgrade",
+        "href": "demo.html",
+        "primary": false
+      },
+      {
+        "label": "Upgrade",
+        "href": "demo.html",
+        "primary": true
+      },
+      {
+        "label": "Contact sales",
+        "href": "demo.html",
+        "primary": false
+      }
+    ]
+  },
+  "principles": [
+    "All plans support real production use",
+    "Unlimited users on all plans (fair use)",
+    "Multiple UI portals per application included",
+    "No per-request or per-CRUD charges",
+    "Scale automation and AI with credits",
+    "Dedicated environments provide reserved capacity and higher throughput"
+  ],
+  "addons": [
+    "Additional credits (pay as you go)",
+    "Additional storage (add-ons)",
+    "Extra environments",
+    "Dedicated infrastructure",
+    "Premium AI models",
+    "Enterprise support packages"
+  ],
+  "sectionCta": {
+    "id": "cta",
+    "title": "Need a tailored plan?",
+    "copyHtml": "Talk to us about capacity, environments, support level, and pricing structure for your delivery model.",
+    "primary": {
+      "label": "Contact sales",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    }
+  }
+}

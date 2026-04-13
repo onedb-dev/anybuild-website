@@ -1,0 +1,176 @@
+<div class="page-platform">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container hero-grid hero-grid--split page-platform-hero-grid">
+      <div>
+        <div class="kicker">{{hero.kicker}}</div>
+        <h1>{{hero.headline}}</h1>
+        <div class="subtagline">{{hero.subtagline}}</div>
+        <p class="hero-copy">{{hero.copy}}</p>
+      </div>
+
+      <div class="hero-card hero-card--flush">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="page-platform-panel-title">How the platform is structured</div>
+
+        <div class="platform-flow">
+          <div class="flow-card">
+            <strong>{{hero.diagram.model.title}}</strong>
+            <span>{{hero.diagram.model.text}}</span>
+          </div>
+
+          <div class="flow-center">{{hero.diagram.center}}</div>
+
+          <div class="flow-row">
+            {{#each hero.diagram.row1}}
+              <div class="flow-card">
+                <strong>{{title}}</strong>
+                <span>{{text}}</span>
+              </div>
+            {{/each}}
+          </div>
+
+          <div class="flow-row">
+            {{#each hero.diagram.row2}}
+              <div class="flow-card">
+                <strong>{{title}}</strong>
+                <span>{{text}}</span>
+              </div>
+            {{/each}}
+          </div>
+
+          <div class="flow-card">
+            <strong>{{hero.diagram.run.title}}</strong>
+            <span>{{hero.diagram.run.text}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{foundation.id}}">
+    <div class="container">
+      <div class="platform-highlight">
+        <h2>{{foundation.highlight.title}}</h2>
+        <p class="platform-highlight-lead">{{{foundation.highlight.leadHtml}}}</p>
+        <p class="platform-highlight-note">{{foundation.highlight.note}}</p>
+      </div>
+
+      <div class="grid-3 platform-foundation-grid">
+        {{#each foundation.paths}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{howBuilt.label}}</div>
+        <h2>{{howBuilt.title}}</h2>
+        <p class="section-copy">{{howBuilt.copy}}</p>
+      </div>
+      <div class="platform-strip">
+        {{#each howBuilt.strip}}
+          <div class="platform-strip-card">
+            <strong>{{title}}</strong>
+            <span>{{text}}</span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{components.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{components.label}}</div>
+        <h2>{{components.title}}</h2>
+        <p class="section-copy">{{components.copy}}</p>
+      </div>
+
+      <div class="platform-layer-flow">
+        {{#each components.layerFlow}}
+          <span>{{this}}</span>
+          {{#unless @last}}<span class="platform-layer-arrow" aria-hidden="true">→</span>{{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="grid-4 platform-components-grid">
+        {{#each components.groups}}
+          <div class="platform-component-group-label">{{groupLabel}}</div>
+          {{#each items}}
+            <div class="card card-expandable" data-expandable tabindex="0" role="button">
+              <h3>{{title}}</h3>
+              <p>{{summary}}</p>
+              <div class="card-expand">
+                {{#each details}}
+                  <p>{{this}}</p>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{lifecycle.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{lifecycle.label}}</div>
+        <h2>{{lifecycle.title}}</h2>
+        <p class="section-copy">{{lifecycle.copy}}</p>
+      </div>
+      <div class="platform-strip">
+        {{#each lifecycle.strip}}
+          <div class="platform-strip-card">
+            <strong>{{title}}</strong>
+            <span>{{text}}</span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="platform-highlight">
+        <h2>{{included.highlight.title}}</h2>
+        <p class="platform-highlight-lead">{{{included.highlight.leadHtml}}}</p>
+      </div>
+      <div class="grid-3 platform-included-grid">
+        {{#each included.miniCards}}
+          <div class="card"><p>{{this}}</p></div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{platformAi.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{platformAi.label}}</div>
+        <h2>{{platformAi.title}}</h2>
+        <p class="section-copy">{{platformAi.copy}}</p>
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

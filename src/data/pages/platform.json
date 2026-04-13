@@ -1,0 +1,245 @@
+{
+  "title": "Platform — Anybuild",
+  "description": "The Anybuild platform: one model for data, views, workflows, UI, reporting, and security—built to define, run, and change systems over time.",
+  "includeHeroScript": false,
+  "includePlatformScript": true,
+  "inpageNav": [
+    { "label": "Foundation", "href": "#foundation" },
+    { "label": "Components", "href": "#components" },
+    { "label": "Lifecycle", "href": "#lifecycle" },
+    { "label": "AI", "href": "#platform-ai" },
+    { "label": "Get started", "href": "#cta" }
+  ],
+  "hero": {
+    "kicker": "Platform",
+    "headline": "Model-driven platform for business systems",
+    "subtagline": "Full platform. AI accelerates.",
+    "copy": "Anybuild starts from a shared model and keeps data, workflows, views, UI, reporting, and security aligned. AI speeds up parts of the work while the platform keeps structure, rules, and lifecycle.",
+    "diagram": {
+      "model": {
+        "title": "Model",
+        "text": "Entities, relations, constraints, rules, default values."
+      },
+      "center": "Shared system foundation",
+      "row1": [
+        {
+          "title": "Views",
+          "text": "Reusable data layer for UI, reporting, and logic."
+        },
+        {
+          "title": "Workflows",
+          "text": "Reusable and nestable processes with triggers and actions."
+        }
+      ],
+      "row2": [
+        {
+          "title": "UI",
+          "text": "Generated screens plus custom components when needed."
+        },
+        {
+          "title": "Security",
+          "text": "Built-in access control extended into the domain."
+        }
+      ],
+      "run": {
+        "title": "Run and change",
+        "text": "Systems evolve on top of the same structure instead of being rebuilt."
+      }
+    }
+  },
+  "foundation": {
+    "id": "foundation",
+    "highlight": {
+      "title": "One model",
+      "leadHtml": "Data, views, UI, workflows, reporting, and security use the same structure.<br />Change it once and it updates everywhere.",
+      "note": "Hosting, database, domains, and security are already included. No extra setup."
+    },
+    "paths": [
+      { "title": "Data path", "text": "Model → Views → UI / Reporting" },
+      { "title": "Event path", "text": "Triggers → Workflows → Actions → APIs" },
+      { "title": "Access", "text": "Security applies across all parts, not per screen." }
+    ]
+  },
+  "howBuilt": {
+    "label": "How systems are defined",
+    "title": "More than one way to build",
+    "copy": "Start from text, diagram, point-and-click, or code. All of them work on top of the same platform.",
+    "strip": [
+      {
+        "title": "AI",
+        "text": "Generate the first version from requirements or a spec."
+      },
+      {
+        "title": "Diagram",
+        "text": "Define entities and relations visually through ERD and graph views."
+      },
+      {
+        "title": "Manual and code",
+        "text": "Use designers, SQL, and custom UI when more control is needed."
+      }
+    ]
+  },
+  "components": {
+    "id": "components",
+    "label": "Core components",
+    "title": "System layer",
+    "copy": "All parts work together. Not separate tools.",
+    "layerFlow": ["Data", "Logic", "Interface", "Integration"],
+    "groups": [
+      {
+        "groupLabel": "Data",
+        "items": [
+          {
+            "title": "Data model",
+            "summary": "Entities, relations, schemas, constraints, business rules, default values.",
+            "details": [
+              "The model is the foundation of the system.",
+              "It defines structure, validation, relationships, and behavior in one place.",
+              "Everything else - UI, workflows, views, reporting - builds on top of it."
+            ]
+          },
+          {
+            "title": "Views & SQL",
+            "summary": "Reusable data layer with design mode and SQL code mode.",
+            "details": [
+              "Define data using visual tools or SQL.",
+              "Views are reused across UI, reporting, workflows, and integrations.",
+              "Encourages modular logic and avoids duplication."
+            ]
+          }
+        ]
+      },
+      {
+        "groupLabel": "Logic & automation",
+        "items": [
+          {
+            "title": "Workflows",
+            "summary": "Reusable, nestable processes for business logic.",
+            "details": [
+              "Combine smaller workflows into larger processes.",
+              "Used for automation, state changes, and system behavior."
+            ]
+          },
+          {
+            "title": "Triggers",
+            "summary": "Manual, event-based, scheduled, and webhook-driven.",
+            "details": [
+              "Run workflows when something happens in the system or externally.",
+              "Supports real-time reactions and background processing."
+            ]
+          },
+          {
+            "title": "Security",
+            "summary": "Built-in roles, users, and extendable domain security.",
+            "details": [
+              "Apply permissions not just globally but within business structures.",
+              "Security is enforced consistently across the system."
+            ]
+          }
+        ]
+      },
+      {
+        "groupLabel": "Interface",
+        "items": [
+          {
+            "title": "UI & Widgets",
+            "summary": "Autogenerated UI plus custom components.",
+            "details": [
+              "Forms and layouts are generated from the model.",
+              "Custom widgets and full pages can be created and extended.",
+              "Supports internal and external UI development."
+            ]
+          },
+          {
+            "title": "Reporting & Spreadsheets",
+            "summary": "Views, reports, and spreadsheet-based analytics.",
+            "details": [
+              "Use views as data sources for reports.",
+              "Spreadsheet engine supports complex layouts like financial reports.",
+              "Multi-user, structured alternative to Excel."
+            ]
+          },
+          {
+            "title": "Functions & Logic",
+            "summary": "Reusable logic components with parameters.",
+            "details": [
+              "Define logic once and reuse across the system.",
+              "Supports both design mode and SQL-based implementation.",
+              "Encourages modular, maintainable systems."
+            ]
+          },
+          {
+            "title": "Field types",
+            "summary": "Structured data definitions reused across entities.",
+            "details": [
+              "Define reusable field types with validation and behavior.",
+              "Ensures consistency across the data model."
+            ]
+          }
+        ]
+      },
+      {
+        "groupLabel": "Integration",
+        "items": [
+          {
+            "title": "APIs & Integrations",
+            "summary": "Custom routes, webhooks, and external APIs.",
+            "details": [
+              "Define custom API routes and handle them with workflows.",
+              "Workflows can call other workflows, use views, read and write data, and apply full system logic.",
+              "Connect to any external API. If an API exists, Anybuild can use it.",
+              "Prebuilt connectors (for example Microsoft Office) are available, but there is no limitation."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "lifecycle": {
+    "id": "lifecycle",
+    "label": "Lifecycle",
+    "title": "Built to change",
+    "copy": "Systems do not stop after the first version. The same platform is used to define, run, and change them over time.",
+    "strip": [
+      {
+        "title": "Define",
+        "text": "Create structure through AI, diagrams, designers, or code."
+      },
+      {
+        "title": "Run",
+        "text": "Use the platform foundation for security, workflows, views, UI, and reporting."
+      },
+      {
+        "title": "Change",
+        "text": "Update the model and keep extending the same system instead of rebuilding it."
+      }
+    ]
+  },
+  "included": {
+    "highlight": {
+      "title": "Already included",
+      "leadHtml": "Authentication, roles, permissions, triggers, scheduling, reusable views, autogenerated UI, reporting, hosting, database, and domains are already part of the platform."
+    },
+    "miniCards": [
+      "Define data once",
+      "Reuse across UI and reports",
+      "Run logic with workflows",
+      "React with triggers",
+      "Control access everywhere",
+      "Extend without rebuilding"
+    ]
+  },
+  "platformAi": {
+    "id": "platform-ai",
+    "label": "AI",
+    "title": "AI where it helps",
+    "copy": "Use AI across requirements, modeling, SQL, UI, and application features. It accelerates work while the platform keeps structure, rules, and lifecycle."
+  },
+  "sectionCta": {
+    "id": "cta",
+    "titleHtml": "Platform first.<br />AI when useful.",
+    "copyHtml": "Build on a structured system layer with built-in model, workflows, views, reporting, UI, and security. Use AI to speed up parts of the work, not to replace the platform.",
+    "primary": { "label": "Try for free", "href": "try.html" },
+    "secondary": { "label": "Book a demo", "href": "demo.html" }
+  }
+}

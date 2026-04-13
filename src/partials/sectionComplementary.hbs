@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{{titleHtml}}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="grid-3">
+      {{#each cards}}
+        <div class="card">
+          <div class="icon">{{icon}}</div>
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

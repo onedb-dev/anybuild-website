@@ -1,0 +1,228 @@
+{
+  "title": "Anybuild - Model-Driven Platform for Business Systems",
+  "description": "Build production business systems in hours on a model-driven platform—security, workflows, reporting, and SQL views included. AI-accelerated where useful; you stay in control.",
+  "includeHeroScript": true,
+  "hero": {
+    "kicker": "Model-Driven Platform for Business Systems",
+    "headlineHtml": "Build production systems<br />in hours",
+    "subtagline": "AI speed. Full control.",
+    "copyHtml": "Model-driven platform with built-in security, workflows, and reporting.<br />Built for production. Ready to run.",
+    "pills": [
+      "Model-first",
+      "AI optional",
+      "Built-in security",
+      "Workflows & automation",
+      "SQL views",
+      "Evolvable after generation"
+    ],
+    "mock": {
+      "title": "Start building your system",
+      "promptPlaceholder": "Describe your system or paste a spec...",
+      "examples": [
+        {
+          "label": "Inventory management",
+          "full": "Inventory management system with suppliers, orders, and stock tracking"
+        },
+        {
+          "label": "CRM",
+          "full": "CRM for managing leads, deals, and customer interactions"
+        },
+        {
+          "label": "Project tracking",
+          "full": "Project tracking system with tasks, timelines, and approvals"
+        },
+        {
+          "label": "Procurement",
+          "full": "Procurement system with requests, approvals, vendors, and purchase orders"
+        },
+        {
+          "label": "HR system",
+          "full": "HR system for employees, onboarding, leave requests, and performance reviews"
+        },
+        {
+          "label": "Support tickets",
+          "full": "Customer support system with tickets, SLAs, assignments, and reporting"
+        }
+      ]
+    },
+    "flowSteps": [
+      {
+        "num": "01",
+        "title": "Define requirements",
+        "copy": "Start with business requirements manually or with AI assistance. Refine the spec at any time."
+      },
+      {
+        "num": "02",
+        "title": "Shape the system model",
+        "copy": "Move through ERD and structure. Edit entities, relations, rules, and behaviors before generation."
+      },
+      {
+        "num": "03",
+        "title": "Generate the initial application",
+        "copy": "Produce a working system on top of a governed runtime with permissions, workflows, and reporting ready from day one."
+      },
+      {
+        "num": "04",
+        "title": "Evolve without rebuilding",
+        "copy": "Extend entities, SQL views, triggers, workflows, security, and UI inside the platform or via approved external AI tools."
+      }
+    ]
+  },
+  "sectionHow": {
+    "id": "how",
+    "label": "How it works",
+    "title": "From requirement to working system",
+    "copyHtml": "Not a one-shot generator.<br />A structured lifecycle for building and evolving operational software.",
+    "cards": [
+      {
+        "icon": "✦",
+        "title": "Define",
+        "body": "Capture requirements as structured intent. Start manually or use AI to accelerate the first version."
+      },
+      {
+        "icon": "◫",
+        "title": "Model",
+        "body": "Refine the spec through a governed data model and ERD, with manual edits always available."
+      },
+      {
+        "icon": "⚙",
+        "title": "Generate",
+        "body": "Create an initial application with foundation capabilities already in place, not bolted on later."
+      },
+      {
+        "icon": "↗",
+        "title": "Evolve",
+        "body": "Continue inside the platform with workflows, views, security, and UI changes as the system grows."
+      }
+    ]
+  },
+  "sectionDifference": {
+    "id": "difference",
+    "label": "Why it's different",
+    "title": "Not another AI app builder",
+    "copyHtml": "AI is part of the picture, not the product.<br />The product is the governed system layer.",
+    "contrasts": [
+      {
+        "eyebrow": "Vs AI app builders",
+        "headlineHtml": "They generate apps.<br />Anybuild generates systems.",
+        "body": "Fast output alone is not enough. Anybuild gives that output structure, rules, consistency, and a lifecycle after generation."
+      },
+      {
+        "eyebrow": "Vs low-code",
+        "headlineHtml": "They reduce coding.<br />Anybuild reduces system design.",
+        "body": "Instead of manually assembling every layer, users work from requirements and model, then refine from there."
+      },
+      {
+        "eyebrow": "Vs code tools",
+        "headlineHtml": "They generate code.<br />Anybuild governs execution.",
+        "body": "External AI can help produce artifacts, but Anybuild enforces contracts, platform rules, and long-term consistency."
+      }
+    ]
+  },
+  "sectionFoundation": {
+    "id": "foundation",
+    "label": "Platform foundation",
+    "title": "The hard parts are already solved",
+    "copyHtml": "Every application starts on a reusable foundation.<br />The result is production-ready from the start.",
+    "main": {
+      "title": "Enterprise-grade capabilities from day one",
+      "intro": "Instead of rebuilding infrastructure for every project, teams work on domain logic while the platform provides the system backbone.",
+      "features": [
+        {
+          "title": "Security model",
+          "text": " with centralized permissions and consistent enforcement across the application."
+        },
+        {
+          "title": "Workflows and automation",
+          "text": " tied directly to entities, triggers, and business events."
+        },
+        {
+          "title": "Reporting and SQL views",
+          "text": " as native platform capabilities, not external afterthoughts."
+        },
+        {
+          "title": "Governed extensibility",
+          "text": " for UI now and backend later through compliant external tooling."
+        }
+      ]
+    },
+    "sideCards": [
+      {
+        "highlight": true,
+        "title": "No setup. No infrastructure.",
+        "bodyHtml": "Every system runs on a complete foundation.<br />Hosting, database, security, and domains are already included."
+      },
+      {
+        "title": "AI where it matters",
+        "bodyHtml": "Use AI to accelerate requirement definition, model shaping, SQL authoring, and future extensibility. Use manual control everywhere else."
+      },
+      {
+        "title": "Works without AI",
+        "bodyHtml": "The platform stands on its own. AI improves speed, but the model, runtime, and lifecycle do not depend on it."
+      },
+      {
+        "title": "Built to evolve",
+        "bodyHtml": "Once the first version exists, teams keep extending the same system instead of throwing away generated output and starting over."
+      }
+    ]
+  },
+  "sectionComplementary": {
+    "label": "Complementary tools",
+    "titleHtml": "Open to external AI.<br />Closed on system rules.",
+    "copyHtml": "External AI tools accelerate UI and backend work.<br />Anybuild validates, normalizes, and runs the system.",
+    "cards": [
+      {
+        "icon": "⌘",
+        "title": "Use any generation tool",
+        "body": "Teams can work with their preferred external AI tooling without turning the platform into unmanaged code hosting."
+      },
+      {
+        "icon": "⟲",
+        "title": "Push back into the platform",
+        "body": "Generated artifacts are brought back under platform control, where contracts and platform constraints are enforced."
+      },
+      {
+        "icon": "▣",
+        "title": "Keep the system coherent",
+        "body": "The result is flexibility for builders and consistency for the business: freedom in creation, discipline in execution."
+      }
+    ]
+  },
+  "sectionUsers": {
+    "id": "users",
+    "label": "Who it's for",
+    "titleHtml": "Different users.<br />Same system foundation.",
+    "copyHtml": "Teams that need custom business software.<br />No tradeoff between speed and control.",
+    "audiences": [
+      {
+        "title": "Operations teams",
+        "body": "Build systems around real workflows instead of adapting the business to generic software."
+      },
+      {
+        "title": "Product leaders",
+        "body": "Move from requirements to usable systems quickly, then keep refining on the same platform."
+      },
+      {
+        "title": "Developers",
+        "body": "Skip undifferentiated work and focus on logic, views, integrations, and advanced customization."
+      },
+      {
+        "title": "Agencies",
+        "body": "Deliver client systems faster with repeatable architecture and a strong built-in foundation."
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "title": "Build systems, not throwaway apps",
+    "copyHtml": "Start with requirements. Accelerate with AI where useful.<br />Keep control through a model-driven platform built for long-term evolution.",
+    "primary": {
+      "label": "Try for free",
+      "href": "try.html"
+    },
+    "secondary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "lang": "en",
+  "assetPrefix": "",
+  "siteUrl": "https://anybuild.com",
+  "defaultDescription": "Build production business systems on Anybuild's model-driven platform—security, workflows, reporting, and SQL views. AI-accelerated where useful; you stay in control.",
+  "defaultPageKeywords": "Anybuild, model-driven platform, business systems, ERP, CRM, Onedb, enterprise software, AI-assisted development",
+  "themeColor": "#0a1525",
+  "ogLocale": "en_US",
+  "meta": {
+    "ogImage": "https://d1kh6r42218xf.cloudfront.net/153e3098-da30-4836-84b9-1756a749b0ae/ddfa748b-1e89-406a-ad6b-e267fd33d9da/f7e56bfd-eb9c-4df9-9629-27322dd8eb26/a2f98692-e511-44c4-a72c-d4875bafebb4?Expires=2054938039&Key-Pair-Id=K1LSJ2R0FTCUKR&Signature=Htyq0KY78V98DU6JNgPlOJFSpQADgT5utlf50zV0br~JL5kpCEXqeDyXrSmxJETiz6fPNwtYr3lA~8ivtvawy3OEVFx0ZJqsgsDa4IMNZ1PUMhSDugcTRSWBYj8tsa~wmus-v2Sfm0K~4-RhM7z8wpIf~DuRhSgyPeY4nOrCrDz57Q9jdK4cBOdvxlXNvA-M~FOBHeI0HGRNMCWn9AOOMWO~DIKiVxoledITDW7PbQb60dl5DibYPTPZ~FwW3VQ22T1ZNB8-2JRT3IW8FG4kJ4w8-vC0zP-k-mf6HUIr1VvChG1VOC6rjjLIZdJVKdQQq5D4b39qw0E79GVCM7Co2A__",
+    "ogImageWidth": "1200",
+    "ogImageHeight": "322",
+    "shortcutIcon": "https://d1kh6r42218xf.cloudfront.net/153e3098-da30-4836-84b9-1756a749b0ae/ddfa748b-1e89-406a-ad6b-e267fd33d9da/13951b46-694c-4941-afae-b577b5eccaa8/4d7f87b8-3a30-4441-9077-b58bf5b2aed6?Expires=2055153144&Key-Pair-Id=K1LSJ2R0FTCUKR&Signature=U2tckHSwUCMh9mzOZlym3O12CTmfrd7HBQHUcA2KBH3iMc6We0-o6G6lB-YXaHTKdIbcCsFmtfqdEI79NsxWkC6tP9f61z1ZMIWLMEqBPN5rkow927S7jkJLBMiN7Hnd2L2m6lTwN8YwDXOB5OiCECM2SsOx08PMZlJZBMmDtGcV7kEDUaD58GWMJbfLdiPKuX-mjbHOAe9XW6TldiOXg2cGcrpCQ3aLShfndLeTU7SJUw6taLDeQO6d06-NRqWW3IyVZdItbcW9cJIx5hbPBcTngIpCgDhSv5htdmS0AM7rMRlEWouyRXWRCOq9hVrhdOxGYUKtUmYeXvddVGA-Zw__",
+    "appleTouchIcon": "https://d1kh6r42218xf.cloudfront.net/153e3098-da30-4836-84b9-1756a749b0ae/ddfa748b-1e89-406a-ad6b-e267fd33d9da/13951b46-694c-4941-afae-b577b5eccaa8/cb6293f4-6fa7-488a-8f3b-99bb54eed838?Expires=2055153415&Key-Pair-Id=K1LSJ2R0FTCUKR&Signature=Vs-2hNeQojqAdo0m-MQx-uykYyqQmd-6EKyTh4ETl-nNsu2IJK0zSnpmlxrTy5M9QrwkOToI2HeOPTC5goGnnafuQI4yvRLN7Xeu5CaQ9diRmO2cTYNClKVYoerc7SYQYcq4ZRoJIsM3B-cDauUt5cydvsMcCsPfuv9a4czbSWBUwyAB1znZUR1In8V7igas7XNo32emTsKlJYxh8w-pfiqUqPEt8wQTkEIznCzubPRZW-j2uTUnw3ORr-4N0O45A4UgxSzwi5MkAt6lc4MWArYVIfiJR~AGJ12F9XzLrppFPbi7ZW9N4WwaDabb7i16HdvoiJitloQ-g-ufAghtbQ__"
+  },
+  "brand": {
+    "name": "Anybuild",
+    "href": "/",
+    "logoUrl": "https://d1kh6r42218xf.cloudfront.net/153e3098-da30-4836-84b9-1756a749b0ae/ddfa748b-1e89-406a-ad6b-e267fd33d9da/f7e56bfd-eb9c-4df9-9629-27322dd8eb26/e5ceb1c2-a582-450a-bcb2-370778ef0210?Expires=2054154742&Key-Pair-Id=K1LSJ2R0FTCUKR&Signature=kJP6BPDKTNRcUCxbxnNs~iHD5L9oCKDTKoC6qYka3-qFMX5XWWbo-FY5fFT6~JYovFoddKZxEPj4mkQxT5zStF-3Pi2a094JPOLyA5Apt5xgZlle~7AFVCBgoQ5WtY~oI9ZhXyPm1QUeZ9w5-J52zs9gx3duUaEro9~fUf04kmyZHih6-iVJd5qWk~NLfmA-lUHyr6dlnZf5QJKKKsm8OgBUzINcKUmgUOC~AQiqgz~qKiv9nX1ZkPXuTu0VFcvj8~pgNDhXsNzmNLWLOCv~e64ZRXvi70WsZIQNQFZ6Fsswm3HSi2momvxWUXogD~kXHLvVGmEWqPZd00F6XX9BuA__",
+    "logoHeight": 48,
+    "useLogoImage": true
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Platform",
+        "href": "platform.html"
+      },
+      {
+        "label": "Partners",
+        "href": "partners.html"
+      },
+      {
+        "label": "AI",
+        "href": "ai.html"
+      },
+      {
+        "label": "Pricing",
+        "href": "pricing.html"
+      },
+      {
+        "label": "Onedb Smartsuite",
+        "href": "onedb-smartsuite.html"
+      },
+      {
+        "label": "Resources",
+        "items": [
+          {
+            "label": "About Anybuild",
+            "description": "Company story, leadership, and locations.",
+            "href": "about.html"
+          },
+          {
+            "label": "FAQ",
+            "description": "Answers about Anybuild, Onedb, security, and scale.",
+            "href": "faq.html"
+          },
+          {
+            "label": "Contact",
+            "description": "General inquiries, partnerships, and product questions.",
+            "href": "contact.html"
+          },
+          {
+            "label": "Support",
+            "description": "Platform help, issues, and technical requests.",
+            "href": "support.html"
+          },
+          {
+            "label": "Careers",
+            "description": "Open roles, culture, and growth opportunities.",
+            "href": "careers.html"
+          },
+          {
+            "label": "Terms",
+            "description": "Terms and conditions for using the platform.",
+            "href": "terms.html"
+          },
+          {
+            "label": "Privacy",
+            "description": "How we collect, use, and protect personal information.",
+            "href": "privacy.html"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Book a demo",
+        "href": "demo.html",
+        "variant": "secondary"
+      },
+      {
+        "label": "Try for free",
+        "href": "try.html",
+        "variant": "primary"
+      }
+    ]
+  },
+  "footer": {
+    "company": {
+      "brandMark": "Onedb",
+      "legalName": "Onedb Service Delivery Ltd",
+      "lines": [
+        "Company Registered in England and Wales",
+        "Company Number 10671067",
+        "Registered Office: 76 Llangranog Rd, Cardiff, CF14 5BP, UK",
+        "Offices: London, Lisbon, Belgrade, Stockholm, Jersey, Johannesburg",
+        "GLOBAL Partner Network"
+      ]
+    },
+    "copyright": "© 2026 Anybuild. Model-driven systems. AI-accelerated where useful."
+  },
+  "includeHeroScript": false
+}

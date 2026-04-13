@@ -1,0 +1,30 @@
+{
+  "title": "Resources — Anybuild",
+  "description": "Resource hub for product pages, company information, and future documentation.",
+  "includeHeroScript": false,
+  "hero": {
+    "kicker": "Resources",
+    "headlineHtml": "Resources",
+    "copyHtml": "A single place for product pages, company information, and upcoming materials."
+  },
+  "items": [
+    {
+      "title": "About Anybuild",
+      "copy": "Company background, leadership, and operating principles.",
+      "href": "about.html",
+      "cta": "Open About"
+    },
+    {
+      "title": "Onedb Smartsuite",
+      "copy": "ERP and CRM overview running on the Anybuild platform.",
+      "href": "onedb-smartsuite.html",
+      "cta": "Open Smartsuite"
+    },
+    {
+      "title": "More resources soon",
+      "copy": "Additional pages, guides, and reference material will be added here.",
+      "href": "",
+      "cta": "Coming soon"
+    }
+  ]
+}

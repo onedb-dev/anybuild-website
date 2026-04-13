@@ -1,0 +1,163 @@
+{
+  "title": "AI — Anybuild",
+  "description": "How Anybuild uses AI: inside the platform, with external tools, and in your apps—plus what AI does not control. The platform governs structure, validation, and runtime.",
+  "includeHeroScript": false,
+  "inpageNav": [
+    { "label": "Internal AI", "href": "#where" },
+    { "label": "External AI", "href": "#tools" },
+    { "label": "AI in apps", "href": "#in-app" },
+    { "label": "What AI does not do", "href": "#rules" }
+  ],
+  "hero": {
+    "kicker": "AI in Anybuild",
+    "headlineHtml": "AI accelerates.<br />The platform keeps control.",
+    "subtagline": "Works without AI. Faster with it.",
+    "copyHtml": "AI helps build systems faster.<br />Anybuild keeps structure, rules, and lifecycle under control.",
+    "panelTitle": "How AI fits",
+    "pipeline": [
+      {
+        "title": "AI input",
+        "copy": "Prompt, spec, SQL help, external tools.",
+        "items": ["Requirements", "Views and SQL", "UI work"]
+      },
+      {
+        "title": "Anybuild",
+        "copy": "Model, rules, validation, and runtime stay in one place.",
+        "items": ["Model", "Validation", "Governed runtime"]
+      },
+      {
+        "title": "System output",
+        "copy": "Production system that can be changed and extended over time.",
+        "items": ["Security", "Workflows", "Reporting"]
+      }
+    ]
+  },
+  "sections": {
+    "internal": {
+      "id": "where",
+      "label": "Internal AI",
+      "title": "Inside the platform",
+      "copyHtml": "AI is built into the platform.<br />Used across requirements, model, SQL, and UI.",
+      "cards": [
+        {
+          "title": "Requirements",
+          "body": "Start from a prompt or upload a spec. Use AI to get to the first version faster."
+        },
+        {
+          "title": "Model shaping",
+          "body": "Use AI during the early model phase, then refine manually before generation."
+        },
+        {
+          "title": "SQL views",
+          "body": "Use AI to write and improve SQL views inside the platform."
+        },
+        {
+          "title": "Initial system",
+          "body": "Use AI to create the first working version instead of starting from a blank system."
+        },
+        {
+          "title": "UI components",
+          "body": "Use the internal AI UI builder to create components inside the platform."
+        },
+        {
+          "title": "Safe changes",
+          "body": "AI suggestions are checked against the model. Changes that break structure or rules are adjusted or rejected."
+        }
+      ]
+    },
+    "external": {
+      "id": "tools",
+      "label": "External AI",
+      "title": "Outside the platform",
+      "copyHtml": "Use external AI tools like Cursor, Claude Code, and similar.<br />Anybuild validates, normalizes, and runs the result.",
+      "cards": [
+        {
+          "title": "Use external tools",
+          "body": "Use tools like Cursor, Claude Code, and similar for UI work."
+        },
+        {
+          "title": "Bring work back",
+          "body": "Artifacts come back into Anybuild instead of living outside the platform."
+        },
+        {
+          "title": "Keep one system",
+          "body": "The system stays aligned with platform rules and structure."
+        }
+      ]
+    },
+    "inApp": {
+      "id": "in-app",
+      "label": "AI in applications",
+      "title": "Inside your applications",
+      "copyHtml": "Use AI as part of workflows and features.<br />Not just for building, but for running the system.",
+      "cards": [
+        {
+          "title": "Workflows and decisions",
+          "body": "Use AI in workflows for routing, decisions, and automation."
+        },
+        {
+          "title": "Document processing",
+          "body": "Extract data from documents using OCR and structured parsing."
+        },
+        {
+          "title": "Image recognition",
+          "body": "Classify and analyze images as part of business processes."
+        }
+      ]
+    },
+    "rules": {
+      "id": "rules",
+      "label": "What AI does not do",
+      "title": "AI does not run the system",
+      "copyHtml": "AI helps create parts of the system.<br />Anybuild stays in control of how the system works.",
+      "columns": [
+        {
+          "title": "AI does not decide",
+          "items": ["System structure", "Platform rules", "Runtime behavior", "Security model"]
+        },
+        {
+          "title": "Anybuild keeps control",
+          "items": ["Model stays governed", "Validation stays enforced", "Output stays consistent", "Systems stay changeable"]
+        }
+      ]
+    },
+    "compare": {
+      "label": "Compared to other AI tools",
+      "title": "Different by design",
+      "copyHtml": "Other tools generate output.<br />Anybuild keeps systems structured and consistent.",
+      "cards": [
+        {
+          "title": "Prompt-based builders",
+          "bodyHtml": "Generate apps quickly from prompts.<br />Hard to extend and keep consistent over time."
+        },
+        {
+          "title": "Code generators",
+          "bodyHtml": "Produce code with high flexibility.<br />No built-in structure or system rules."
+        },
+        {
+          "title": "No-code tools with AI",
+          "bodyHtml": "Mix manual building with AI help.<br />Still require setup and system design."
+        }
+      ]
+    }
+  },
+  "centerpiece": {
+    "columns": [
+      {
+        "title": "AI generates.",
+        "body": "AI helps move faster."
+      },
+      {
+        "title": "Anybuild governs.",
+        "body": "Anybuild makes sure the result works as a real system."
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "titleHtml": "Works without AI.<br />Faster with it.",
+    "copyHtml": "Use AI where it saves time. Keep the platform in control from start to finish.",
+    "primary": { "label": "Try for free", "href": "try.html" },
+    "secondary": { "label": "Book a demo", "href": "demo.html" }
+  }
+}

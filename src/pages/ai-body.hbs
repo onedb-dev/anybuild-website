@@ -1,0 +1,155 @@
+<div class="page-ai">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container hero-grid hero-grid--split">
+      <div>
+        <div class="kicker">{{hero.kicker}}</div>
+        <h1>{{{hero.headlineHtml}}}</h1>
+        <div class="subtagline">{{hero.subtagline}}</div>
+        <p class="hero-copy">{{{hero.copyHtml}}}</p>
+      </div>
+
+      <div class="hero-card hero-card--flush">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="panel-title">{{hero.panelTitle}}</div>
+
+        <div class="pipeline">
+          {{#each hero.pipeline}}
+            <div class="pipe-card">
+              <h3>{{title}}</h3>
+              <p>{{copy}}</p>
+              <div class="mini-list">
+                {{#each items}}
+                  <div class="mini-item">{{this}}</div>
+                {{/each}}
+              </div>
+            </div>
+            {{#unless @last}}
+              <div class="pipe-arrow" aria-hidden="true">→</div>
+            {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{sections.internal.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{sections.internal.label}}</div>
+        <h2>{{sections.internal.title}}</h2>
+        <p class="section-copy">{{{sections.internal.copyHtml}}}</p>
+      </div>
+      <div class="grid-3">
+        {{#each sections.internal.cards}}
+          <div class="card card--feature">
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{sections.external.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{sections.external.label}}</div>
+        <h2>{{sections.external.title}}</h2>
+        <p class="section-copy">{{{sections.external.copyHtml}}}</p>
+      </div>
+      <div class="grid-3">
+        {{#each sections.external.cards}}
+          <div class="card card--feature">
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{sections.inApp.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{sections.inApp.label}}</div>
+        <h2>{{sections.inApp.title}}</h2>
+        <p class="section-copy">{{{sections.inApp.copyHtml}}}</p>
+      </div>
+      <div class="grid-3">
+        {{#each sections.inApp.cards}}
+          <div class="card card--feature">
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="{{sections.rules.id}}">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{sections.rules.label}}</div>
+        <h2>{{sections.rules.title}}</h2>
+        <p class="section-copy">{{{sections.rules.copyHtml}}}</p>
+      </div>
+      <div class="grid-2">
+        {{#each sections.rules.columns}}
+          <div class="card card--feature">
+            <h3>{{title}}</h3>
+            <ul>
+              {{#each items}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="centerpiece">
+        {{#each centerpiece.columns}}
+          <div>
+            <h2>{{title}}</h2>
+            <p>{{body}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">{{sections.compare.label}}</div>
+        <h2>{{sections.compare.title}}</h2>
+        <p class="section-copy">{{{sections.compare.copyHtml}}}</p>
+      </div>
+      <div class="grid-3">
+        {{#each sections.compare.cards}}
+          <div class="card card--feature">
+            <h3>{{title}}</h3>
+            <p>{{{bodyHtml}}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

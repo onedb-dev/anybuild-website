@@ -1,0 +1,22 @@
+{
+  "title": "Book a demo — Anybuild",
+  "description": "Book a demo of the Anybuild platform and walk through your use cases with our team.",
+  "includeHeroScript": false,
+  "includeInquiryFormScript": true,
+  "hero": {
+    "kicker": "Demo",
+    "headlineHtml": "Book a demo",
+    "copyHtml": "Schedule a walkthrough of Anybuild tailored to your team and use cases."
+  },
+  "inquiryForm": {
+    "mode": "demo",
+    "intent": "demo",
+    "heading": "Request a demo",
+    "lead": "Tell us about your team, what you want to see, and your preferred timing. We will respond by email.",
+    "submitLabel": "Request demo",
+    "showPriority": false,
+    "subjectLabel": "Focus area",
+    "messageLabel": "Context, timeline, and questions",
+    "organizationLabel": "Company (optional)"
+  }
+}

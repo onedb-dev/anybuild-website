@@ -1,0 +1,22 @@
+{
+  "title": "Careers inquiry — Anybuild",
+  "description": "Introduce yourself to the Anybuild team: background, focus areas, and what you want to work on.",
+  "includeHeroScript": false,
+  "includeInquiryFormScript": true,
+  "hero": {
+    "kicker": "Careers",
+    "headlineHtml": "Careers inquiry",
+    "copyHtml": "Share your experience and the kind of role or problems you care about. Remote-first with occasional office collaboration where needed."
+  },
+  "inquiryForm": {
+    "mode": "careers",
+    "intent": "careers",
+    "heading": "Introduce yourself",
+    "lead": "Summarise your experience, technologies, and the outcomes you want to drive.",
+    "submitLabel": "Send careers inquiry",
+    "showPriority": false,
+    "subjectLabel": "Role or area of interest",
+    "messageLabel": "Background and what you are looking for",
+    "organizationLabel": "Current company (optional)"
+  }
+}

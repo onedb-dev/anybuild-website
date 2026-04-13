@@ -1,0 +1,22 @@
+{
+  "title": "Try for free — Anybuild",
+  "description": "Request access to try the Anybuild platform and explore it with your team.",
+  "includeHeroScript": false,
+  "includeInquiryFormScript": true,
+  "hero": {
+    "kicker": "Try",
+    "headlineHtml": "Try for free",
+    "copyHtml": "Request access to explore Anybuild. We will confirm by email."
+  },
+  "inquiryForm": {
+    "mode": "trial",
+    "intent": "trial",
+    "heading": "Request access",
+    "lead": "We will confirm your request and send next steps by email.",
+    "submitLabel": "Request access",
+    "showPriority": false,
+    "subjectLabel": "What you want to explore",
+    "messageLabel": "Use case and any constraints",
+    "organizationLabel": "Company (optional)"
+  }
+}

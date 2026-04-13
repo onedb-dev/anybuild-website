@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJHMK2F0KF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6SETCJSH62');
+  </script>
+  <title>{{title}}</title>
+  {{#if effectiveDescription}}
+  <meta name="description" content="{{effectiveDescription}}" />
+  {{/if}}
+  {{#if keywords}}
+  <meta name="keywords" content="{{keywords}}" />
+  {{/if}}
+  <meta name="author" content="{{brand.name}}" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  {{#if themeColor}}
+  <meta name="theme-color" content="{{themeColor}}" />
+  <meta name="msapplication-TileColor" content="{{themeColor}}" />
+  {{/if}}
+  {{#if noindex}}
+  <meta name="robots" content="noindex, nofollow" />
+  {{else}}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  {{/if}}
+  {{#if canonicalUrl}}
+  <link rel="canonical" href="{{canonicalUrl}}" />
+  <link rel="alternate" hreflang="{{lang}}" href="{{canonicalUrl}}" />
+  <link rel="alternate" hreflang="x-default" href="{{canonicalUrl}}" />
+  {{/if}}
+
+  <meta property="og:title" content="{{title}}" />
+  {{#if effectiveDescription}}
+  <meta property="og:description" content="{{effectiveDescription}}" />
+  {{/if}}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{brand.name}}" />
+  {{#if ogLocale}}
+  <meta property="og:locale" content="{{ogLocale}}" />
+  {{/if}}
+  {{#if canonicalUrl}}
+  <meta property="og:url" content="{{canonicalUrl}}" />
+  {{/if}}
+  {{#if meta.ogImage}}
+  <meta property="og:image" content="{{{meta.ogImage}}}" />
+  <meta property="og:image:width" content="{{meta.ogImageWidth}}" />
+  <meta property="og:image:height" content="{{meta.ogImageHeight}}" />
+  <meta property="og:image:alt" content="{{ogImageAlt}}" />
+  <meta property="og:image:secure_url" content="{{{meta.ogImage}}}" />
+  {{/if}}
+
+  {{#if meta.ogImage}}
+  <meta name="twitter:card" content="summary_large_image" />
+  {{else}}
+  <meta name="twitter:card" content="summary" />
+  {{/if}}
+  <meta name="twitter:title" content="{{title}}" />
+  {{#if effectiveDescription}}
+  <meta name="twitter:description" content="{{effectiveDescription}}" />
+  {{/if}}
+  {{#if meta.ogImage}}
+  <meta name="twitter:image" content="{{{meta.ogImage}}}" />
+  <meta name="twitter:image:alt" content="{{ogImageAlt}}" />
+  {{/if}}
+
+  {{#if meta.shortcutIcon}}
+  <link rel="shortcut icon" href="{{{meta.shortcutIcon}}}" />
+  {{/if}}
+  {{#if meta.appleTouchIcon}}
+  <link rel="apple-touch-icon" href="{{{meta.appleTouchIcon}}}" />
+  {{/if}}
+  <meta name="apple-mobile-web-app-title" content="{{brand.name}}" />
+
+  {{#if jsonLd}}
+  <script type="application/ld+json">{{{jsonLd}}}</script>
+  {{/if}}
+
+  <link rel="stylesheet" href="{{assetPrefix}}main.css" />
+</head>
+<body>
+  {{> nav}}
+  <main>
+    {{{body}}}
+  </main>
+  {{> siteFooter}}
+  <script src="{{assetPrefix}}nav.js" defer></script>
+  {{#if includeHeroScript}}
+  <script src="{{assetPrefix}}hero-mock.js" defer></script>
+  {{/if}}
+  {{#if includePlatformScript}}
+  <script src="{{assetPrefix}}platform-expand.js" defer></script>
+  {{/if}}
+  {{#if includeFaqScript}}
+  <script src="{{assetPrefix}}faq-search.js" defer></script>
+  {{/if}}
+  {{#if includeInquiryFormScript}}
+  <script src="{{assetPrefix}}inquiry-form.js" defer></script>
+  {{/if}}
+</body>
+</html>

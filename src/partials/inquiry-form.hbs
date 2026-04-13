@@ -1,0 +1,110 @@
+<form
+  class="inquiry-form card"
+  data-inquiry-form
+  data-form-mode="{{inquiryForm.mode}}"
+  novalidate
+>
+  <input type="hidden" name="form_mode" value="{{inquiryForm.mode}}" />
+  <input
+    type="hidden"
+    name="intent"
+    id="inquiry-intent-hidden"
+    value="{{#if inquiryForm.intent}}{{inquiryForm.intent}}{{else}}{{inquiryForm.mode}}{{/if}}"
+  />
+
+  <div class="inquiry-form-header">
+    <h2 class="inquiry-form-title" id="inquiry-form-title">{{inquiryForm.heading}}</h2>
+    {{#if inquiryForm.lead}}
+      <p class="inquiry-form-lead">{{inquiryForm.lead}}</p>
+    {{/if}}
+  </div>
+
+  <div class="inquiry-form-fields">
+    <div class="inquiry-field">
+      <label class="inquiry-label" for="inquiry-name">Full name <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <input
+        class="inquiry-input"
+        type="text"
+        id="inquiry-name"
+        name="full_name"
+        autocomplete="name"
+        required
+        aria-required="true"
+      />
+    </div>
+
+    <div class="inquiry-field">
+      <label class="inquiry-label" for="inquiry-email">Email <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <input
+        class="inquiry-input"
+        type="email"
+        id="inquiry-email"
+        name="email"
+        autocomplete="email"
+        required
+        aria-required="true"
+      />
+    </div>
+
+    <div class="inquiry-field inquiry-field--full">
+      <label class="inquiry-label" for="inquiry-org">{{inquiryForm.organizationLabel}}</label>
+      <input
+        class="inquiry-input"
+        type="text"
+        id="inquiry-org"
+        name="organization"
+        autocomplete="organization"
+      />
+    </div>
+
+    {{#if inquiryForm.showPriority}}
+      <div class="inquiry-field">
+        <label class="inquiry-label" for="inquiry-priority">Priority <span class="inquiry-req" aria-hidden="true">*</span></label>
+        <select class="inquiry-select" id="inquiry-priority" name="priority" required aria-required="true">
+          <option value="" selected disabled>Select priority</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="critical">Critical / production down</option>
+        </select>
+      </div>
+    {{/if}}
+
+    <div class="inquiry-field inquiry-field--full">
+      <label class="inquiry-label" for="inquiry-subject">{{inquiryForm.subjectLabel}} <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <input
+        class="inquiry-input"
+        type="text"
+        id="inquiry-subject"
+        name="subject"
+        required
+        aria-required="true"
+      />
+    </div>
+
+    <div class="inquiry-field inquiry-field--full">
+      <label class="inquiry-label" for="inquiry-message">{{inquiryForm.messageLabel}} <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <textarea
+        class="inquiry-textarea"
+        id="inquiry-message"
+        name="message"
+        rows="6"
+        required
+        aria-required="true"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="inquiry-form-actions">
+    <button type="submit" class="btn primary inquiry-submit">{{inquiryForm.submitLabel}}</button>
+  </div>
+
+  <div
+    class="inquiry-form-feedback"
+    data-inquiry-feedback
+    hidden
+    role="status"
+    aria-live="polite"
+    tabindex="-1"
+  ></div>
+</form>

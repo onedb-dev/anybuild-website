@@ -1,0 +1,22 @@
+{
+  "title": "Contact — Anybuild",
+  "description": "Reach the Anybuild team for product questions, partnerships, and general inquiries.",
+  "includeHeroScript": false,
+  "includeInquiryFormScript": true,
+  "hero": {
+    "kicker": "Contact",
+    "headlineHtml": "Contact us",
+    "copyHtml": "Sales, partnerships, and general questions about Anybuild and the platform."
+  },
+  "inquiryForm": {
+    "mode": "contact",
+    "intent": "contact",
+    "heading": "Send a message",
+    "lead": "We read every message and respond by email.",
+    "submitLabel": "Send message",
+    "showPriority": false,
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "organizationLabel": "Company or organization (optional)"
+  }
+}

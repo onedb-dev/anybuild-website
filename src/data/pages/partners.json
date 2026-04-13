@@ -1,0 +1,186 @@
+{
+  "title": "Partners — Anybuild",
+  "description": "Build systems in hours, reuse ERP/CRM foundations, and extend per client with Anybuild's partner model.",
+  "includeHeroScript": false,
+  "hero": {
+    "headlineHtml": "Build systems.<br />Reuse and extend them.",
+    "copyHtml": "Build from scratch in hours or reuse an existing system.<br />Extend and adapt per client as needed.",
+    "primary": {
+      "label": "Become a partner",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    },
+    "kicker": "Anybuild Partners"
+  },
+  "profiles": [
+    {
+      "title": "Developer companies",
+      "text": "Ship systems faster with less setup work.<br />Focus on logic, not repetition."
+    },
+    {
+      "title": "Consultancies",
+      "text": "Deliver working systems earlier.<br />Avoid rebuilding for each client."
+    },
+    {
+      "title": "Industry experts",
+      "text": "Turn domain knowledge into systems.<br />Reuse across clients."
+    }
+  ],
+  "buildSection": {
+    "title": "What partners build",
+    "copyHtml": "Start from scratch or use an existing system.<br />Both approaches use the same platform and capabilities.",
+    "modes": [
+      {
+        "title": "Start from scratch",
+        "text": "Define requirements.<br />Generate a system in hours.<br />Full control from day one."
+      },
+      {
+        "title": "Start from existing",
+        "text": "Use ERP/CRM foundation.<br />Customize per client.<br />Extend over time."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "ERP foundation",
+        "text": "Full business operations.<br />Finance, inventory, billing, projects.<br /><br />Linked transactions across the system.<br />No rekeying. Real-time data.",
+        "highlight": true
+      },
+      {
+        "title": "CRM foundation",
+        "text": "Sales and service in one flow.<br />Leads, pipelines, support workflows.<br /><br />From lead to deal to invoice.<br />Automated processes and insights.",
+        "highlight": true
+      },
+      {
+        "title": "One system",
+        "text": "All parts of the system share the same model.<br />Data, workflows, UI, and reporting stay aligned.<br /><br />Changes are consistent across the system.",
+        "highlight": false
+      }
+    ]
+  },
+  "partnerModel": {
+    "title": "Partner model",
+    "copyHtml": "You deliver the solution.<br />The platform provides infrastructure, runtime, and system capabilities.",
+    "items": [
+      {
+        "title": "Margins",
+        "text": "20–50%+ depending on role."
+      },
+      {
+        "title": "Ownership",
+        "text": "You own the client and solution."
+      },
+      {
+        "title": "Recurring revenue",
+        "text": "Ongoing income per system."
+      },
+      {
+        "title": "Support",
+        "text": "Sales and technical help."
+      }
+    ]
+  },
+  "partnerTypes": {
+    "title": "Partner types",
+    "items": [
+      {
+        "title": "Affiliate",
+        "text": "Leads only.<br />~15% first-year commission.",
+        "highlight": false
+      },
+      {
+        "title": "VAR",
+        "text": "Sell and deliver.<br />~30%+ lifetime share.",
+        "highlight": false
+      },
+      {
+        "title": "ISV",
+        "text": "Build once.<br />Sell many times.<br />No infra or billing work.",
+        "highlight": true
+      },
+      {
+        "title": "SI",
+        "text": "Enterprise delivery.<br />Custom engagements.",
+        "highlight": false
+      }
+    ]
+  },
+  "work": {
+    "title": "How partners work with Anybuild",
+    "flow": [
+      {
+        "title": "1. Build",
+        "text": "Create a system from scratch or start from an existing foundation."
+      },
+      {
+        "title": "2. Adapt",
+        "text": "Adjust the system per client requirements and workflows."
+      },
+      {
+        "title": "3. Extend",
+        "text": "Continue improving and extending each system over time."
+      }
+    ],
+    "compare": {
+      "left": {
+        "title": "Traditional",
+        "text": "Build per project<br />Repeat setup<br />Maintain separately per client"
+      },
+      "right": {
+        "title": "Anybuild",
+        "text": "Build systems on a shared platform<br />Reuse where it makes sense<br />Extend over time"
+      }
+    },
+    "benefits": [
+      {
+        "title": "No rebuild",
+        "text": "Avoid repeating setup and structure for each project."
+      },
+      {
+        "title": "System included",
+        "text": "Hosting, database, workflows, and reporting are part of the platform."
+      },
+      {
+        "title": "One model",
+        "text": "The system stays consistent across all its parts."
+      }
+    ]
+  },
+  "sectionCta": {
+    "id": "cta",
+    "title": "Partner with Anybuild",
+    "copyHtml": "Start building faster with a governed system platform and a reusable delivery model.",
+    "primary": {
+      "label": "Become a partner",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    }
+  },
+  "inpageNav": [
+    {
+      "label": "Who it is for",
+      "href": "#who"
+    },
+    {
+      "label": "What partners build",
+      "href": "#build"
+    },
+    {
+      "label": "Partner model",
+      "href": "#model"
+    },
+    {
+      "label": "Partner types",
+      "href": "#types"
+    },
+    {
+      "label": "How it works",
+      "href": "#how"
+    }
+  ]
+}

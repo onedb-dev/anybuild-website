@@ -1,0 +1,130 @@
+<div class="page-partners">
+  {{#if inpageNav}}
+    <div class="inpage-nav-wrap">
+      <div class="container inpage-nav" aria-label="On this page">
+        {{#each inpageNav}}
+          <a href="{{href}}">{{label}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+      <div class="cta-row partners-hero-cta">
+        <a class="btn primary" href="{{hero.primary.href}}">{{hero.primary.label}}</a>
+        <a class="btn secondary" href="{{hero.secondary.href}}">{{hero.secondary.label}}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="container grid-3">
+      {{#each profiles}}
+        <div class="card">
+          <h3>{{title}}</h3>
+          <p>{{{text}}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{buildSection.title}}</h2>
+        <p class="section-copy">{{{buildSection.copyHtml}}}</p>
+      </div>
+      <div class="page-partners-grid-2 page-partners-gap">
+        {{#each buildSection.modes}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{{text}}}</p>
+          </div>
+        {{/each}}
+      </div>
+      <div class="grid-3 page-partners-gap">
+        {{#each buildSection.highlights}}
+          <div class="card{{#if highlight}} page-partners-highlight-card{{/if}}">
+            <h3>{{title}}</h3>
+            <p>{{{text}}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="model">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{partnerModel.title}}</h2>
+        <p class="section-copy">{{{partnerModel.copyHtml}}}</p>
+      </div>
+      <div class="grid-4 page-partners-grid-4">
+        {{#each partnerModel.items}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="types">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{partnerTypes.title}}</h2>
+      </div>
+      <div class="page-partners-grid-2">
+        {{#each partnerTypes.items}}
+          <div class="card{{#if highlight}} page-partners-highlight-card{{/if}}">
+            <h3>{{title}}</h3>
+            <p>{{{text}}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{work.title}}</h2>
+      </div>
+      <div class="grid-3">
+        {{#each work.flow}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="page-partners-compare">
+        <div class="page-partners-compare-box">
+          <h3>{{work.compare.left.title}}</h3>
+          <p>{{{work.compare.left.text}}}</p>
+        </div>
+        <div class="page-partners-compare-box page-partners-highlight-card">
+          <h3>{{work.compare.right.title}}</h3>
+          <p>{{{work.compare.right.text}}}</p>
+        </div>
+      </div>
+
+      <div class="grid-3 page-partners-gap">
+        {{#each work.benefits}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

@@ -1,0 +1,65 @@
+<div class="page-careers">
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card page-careers-intro-block">
+        <h2>{{intro.title}}</h2>
+        <div class="page-careers-copy">
+          {{#each intro.paragraphs}}
+            <p>{{this}}</p>
+          {{/each}}
+        </div>
+        <h3>{{intro.skillsTitle}}</h3>
+        <ul>
+          {{#each intro.skills}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <div class="page-careers-highlight">
+          <h3>{{intro.visualTitle}}</h3>
+          <p>{{intro.visualCopy}}</p>
+          <ul class="page-careers-highlight-list">
+            {{#each intro.visualBullets}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card page-careers-inquiry-cta">
+        <h3>{{careersInquiry.title}}</h3>
+        <p>{{careersInquiry.copy}}</p>
+        <a class="btn primary" href="{{careersInquiry.href}}">{{careersInquiry.label}}</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>{{benefits.title}}</h2>
+      </div>
+      <div class="grid-2 page-careers-benefits">
+        {{#each benefits.items}}
+          <div class="card">
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{> sectionCta sectionCta}}
+</div>

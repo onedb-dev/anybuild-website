@@ -1,0 +1,53 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container site-footer-grid">
+    <div class="site-footer-col site-footer-company">
+      <div class="footer-company-head">
+        <span class="footer-company-mark">{{footer.company.brandMark}}</span>
+        <span class="footer-company-name">{{footer.company.legalName}}</span>
+      </div>
+      {{#each footer.company.lines}}
+        <p class="footer-company-line">{{this}}</p>
+      {{/each}}
+    </div>
+
+    <div class="site-footer-col">
+      <h2 class="site-footer-heading">Menu</h2>
+      <ul class="site-footer-list">
+        <li><a href="index.html">Home</a></li>
+        {{#each nav.links}}
+          {{#unless items}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    {{#each nav.links}}
+      {{#if items}}
+        <div class="site-footer-col">
+          <h2 class="site-footer-heading">{{label}}</h2>
+          <ul class="site-footer-list">
+            {{#each items}}
+              <li><a href="{{href}}">{{label}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+    {{/each}}
+
+    <div class="site-footer-col">
+      <h2 class="site-footer-heading">Get started</h2>
+      <ul class="site-footer-list">
+        {{#each nav.actions}}
+          <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer-bottom">
+    <div class="container">
+      <p class="site-footer-copy">{{footer.copyright}}</p>
+    </div>
+  </div>
+</footer>

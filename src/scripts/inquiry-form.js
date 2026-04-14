@@ -1,5 +1,11 @@
 (function () {
-  var INQUIRY_URL = "/api/v1/inquiry";
+  var INQUIRY_URL = "https://anybuild.ai/api/website/queries";
+  var RECAPTCHA_SITE_KEY = "6LdpodcqAAAAAECRuoE_Mb5vAlmeWfWTIZPwohQy";
+  var RECAPTCHA_ACTION = "submit";
+
+  var MSG_SUCCESS =
+    "Message sent! We appreciate you contacting us and will respond as soon as possible.";
+  var MSG_ERROR = "We are sorry, there was an error! Please try again later";
 
   var AREA_LABELS = {
     contact: "General contact",
@@ -99,59 +105,92 @@
         submitBtn.textContent = "Sending…";
       }
 
-      fetch(INQUIRY_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        credentials: "same-origin",
-        body: JSON.stringify(payload),
-      })
-        .then(function (res) {
-          return res.text().then(function (text) {
-            var parsed = null;
-            if (text) {
-              try {
-                parsed = JSON.parse(text);
-              } catch (err) {
-                parsed = null;
-              }
-            }
-            return { res: res, parsed: parsed, text: text };
-          });
+      function sendWithToken(token) {
+        var params = new URLSearchParams();
+        params.append("cmd", "record_enquiry");
+        params.append("type", mode);
+        if (token) {
+          params.append("g-recaptcha-response", token);
+        }
+        params.append("full_name", payload.full_name);
+        params.append("email", payload.email);
+        params.append("subject", payload.subject);
+        params.append("message", payload.message);
+        params.append("intent", payload.intent);
+        params.append("page_url", payload.page_url);
+        params.append("page_path", payload.page_path);
+        if (payload.organization) params.append("organization", payload.organization);
+        if (payload.priority) params.append("priority", payload.priority);
+        if (payload.referrer) params.append("referrer", payload.referrer);
+        params.append("submitted_at", payload.submitted_at);
+        params.append("compiled_body", payload.compiled_body);
+
+        fetch(INQUIRY_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json, text/plain, */*",
+          },
+          mode: "cors",
+          credentials: "omit",
+          body: params.toString(),
         })
-        .then(function (out) {
-          if (out.res.ok) {
+          .then(function (res) {
+            return res.text().then(function () {
+              if (res.status === 200) {
+                setFeedback(feedback, MSG_SUCCESS, "is-success");
+                form.reset();
+                if (feedback) feedback.focus();
+              } else {
+                setFeedback(feedback, MSG_ERROR, "is-error");
+              }
+            });
+          })
+          .catch(function () {
+            setFeedback(feedback, MSG_ERROR, "is-error");
+          })
+          .finally(function () {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.removeAttribute("aria-busy");
+              submitBtn.textContent = defaultLabel;
+            }
+          });
+      }
+
+      if (typeof grecaptcha === "undefined" || !grecaptcha.execute) {
+        setFeedback(
+          feedback,
+          "Security check failed to load. Please refresh the page.",
+          "is-error"
+        );
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute("aria-busy");
+          submitBtn.textContent = defaultLabel;
+        }
+        return;
+      }
+
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+          .then(function (token) {
+            sendWithToken(token);
+          })
+          .catch(function () {
             setFeedback(
               feedback,
-              "Thank you. We have received your request and will follow up by email.",
-              "is-success"
+              "Could not verify reCAPTCHA. Please try again.",
+              "is-error"
             );
-            form.reset();
-            if (feedback) feedback.focus();
-          } else {
-            var errMsg =
-              (out.parsed && (out.parsed.message || out.parsed.error)) ||
-              (out.text && out.text.slice(0, 280)) ||
-              "Something went wrong. Please try again or email us directly.";
-            setFeedback(feedback, errMsg, "is-error");
-          }
-        })
-        .catch(function () {
-          setFeedback(
-            feedback,
-            "We could not reach the server. Check your connection and try again.",
-            "is-error"
-          );
-        })
-        .finally(function () {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.removeAttribute("aria-busy");
-            submitBtn.textContent = defaultLabel;
-          }
-        });
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.removeAttribute("aria-busy");
+              submitBtn.textContent = defaultLabel;
+            }
+          });
+      });
     });
   });
 

@@ -1,6 +1,6 @@
 (function () {
-  var STORAGE_PROMPT = "anybuild_inquiry_intent_prompt";
-  var TRY_URL = "try.html?intent=ai";
+  var HERO_DRAFT_STORAGE_KEY = "anybuild_hero_draft";
+
   var promptInput = document.getElementById("prompt-input");
   var generateLink = document.getElementById("hero-generate-ai");
   var promptError = document.getElementById("hero-prompt-error");
@@ -45,9 +45,21 @@
       }
       clearPromptError();
       try {
-        sessionStorage.setItem(STORAGE_PROMPT, v);
-      } catch (err) {}
-      window.location.href = TRY_URL;
+        sessionStorage.setItem(HERO_DRAFT_STORAGE_KEY, v);
+        var url = new URL("try.html", window.location.href);
+        url.searchParams.set("intent", "ai");
+        url.searchParams.set("draft_source", "session");
+        window.location.href = url.toString();
+      } catch (err) {
+        try {
+          var fallback = new URL("try.html", window.location.href);
+          fallback.searchParams.set("intent", "ai");
+          fallback.searchParams.set("draft", v);
+          window.location.href = fallback.toString();
+        } catch (err2) {
+          window.location.href = "try.html?intent=ai";
+        }
+      }
     });
   }
 })();

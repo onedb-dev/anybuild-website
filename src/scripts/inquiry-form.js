@@ -7,6 +7,9 @@
     "Message sent! We appreciate you contacting us and will respond as soon as possible.";
   var MSG_ERROR = "We are sorry, there was an error! Please try again later";
 
+  /** Hero → Try: draft in sessionStorage; URL must include draft_source=session to read (avoids stale data). */
+  var HERO_DRAFT_STORAGE_KEY = "anybuild_hero_draft";
+
   var AREA_LABELS = {
     contact: "General contact",
     support: "Platform support",
@@ -21,13 +24,85 @@
     return t === "" ? null : t;
   }
 
+  function isSmartsuitePackageId(pkg) {
+    return pkg === "crm" || pkg === "erp" || pkg === "smartsuite";
+  }
+
+  function getPackageFromUrlOnly() {
+    try {
+      var q = trimOrNull(new URLSearchParams(window.location.search).get("package"));
+      return q ? q.toLowerCase() : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /** true / false if present in query string; null if param omitted (not the same as false). */
+  function getIncludeSmartsuiteFromUrlOnly() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has("include_smartsuite")) return null;
+      var v = params.get("include_smartsuite");
+      if (v === "true" || v === "1") return true;
+      if (v === "false" || v === "0") return false;
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function syncTrialPackageSelect(form) {
+    var sel = form.querySelector('select[name="package_id"]');
+    if (!sel) return;
+    var tpl = document.getElementById("inquiry-package-options-smartsuite");
+    if (!window.__inquiryAnybuildPackageOptionsHtml) {
+      window.__inquiryAnybuildPackageOptionsHtml = sel.innerHTML;
+    }
+
+    var pkgFromUrl = getPackageFromUrlOnly();
+    var pkgFromUrlLower = pkgFromUrl;
+    var incFromUrl = getIncludeSmartsuiteFromUrlOnly();
+
+    var useSmartsuite;
+    if (pkgFromUrlLower) {
+      useSmartsuite = isSmartsuitePackageId(pkgFromUrlLower);
+    } else {
+      useSmartsuite = incFromUrl === true;
+    }
+
+    if (useSmartsuite && tpl) {
+      sel.innerHTML = "";
+      sel.appendChild(document.importNode(tpl.content, true));
+    } else {
+      sel.innerHTML = window.__inquiryAnybuildPackageOptionsHtml;
+    }
+
+    var pre;
+    if (pkgFromUrlLower) {
+      pre = pkgFromUrlLower;
+    } else {
+      pre = incFromUrl === true ? "smartsuite" : "trial";
+    }
+
+    sel.value = pre;
+    if (sel.value !== pre && sel.options.length) {
+      sel.selectedIndex = 0;
+    }
+  }
+
   function compileBody(payload) {
-    var lines = [
+    var lines = [];
+    if (payload.package_id) {
+      lines.push("Package id: " + payload.package_id);
+    }
+    lines.push("Include Smartsuite: " + (payload.include_smartsuite ? "true" : "false"));
+    lines.push("---");
+    lines.push(
       "Area: " + payload.area_label + " (" + payload.form_mode + ")",
       "Intent: " + payload.intent,
       "Submitted from: " + payload.page_url,
-      "Path: " + payload.page_path,
-    ];
+      "Path: " + payload.page_path
+    );
     if (payload.referrer) lines.push("Referrer: " + payload.referrer);
     lines.push("Submitted at: " + payload.submitted_at);
     lines.push("---");
@@ -79,6 +154,18 @@
       var intentRaw = String(fd.get("intent") || "").trim();
       var intent = intentRaw || mode;
 
+      var packageSelect = form.querySelector('select[name="package_id"]');
+      var packageId = packageSelect
+        ? trimOrNull(fd.get("package_id"))
+        : null;
+      if (!packageId && (mode === "trial" || mode === "demo")) {
+        packageId = getPackageFromUrlOnly();
+      }
+      if (packageId) {
+        packageId = packageId.toLowerCase();
+      }
+      var includeSmartsuite = isSmartsuitePackageId(packageId || "");
+
       var payload = {
         cmd: "record_enquiry",
         form_mode: mode,
@@ -95,6 +182,8 @@
         priority: priority,
         subject: String(fd.get("subject") || "").trim(),
         message: String(fd.get("message") || "").trim(),
+        package_id: packageId,
+        include_smartsuite: includeSmartsuite,
       };
 
       payload.compiled_body = compileBody(payload);
@@ -106,34 +195,37 @@
       }
 
       function sendWithToken(token) {
-        var params = new URLSearchParams();
-        params.append("cmd", "record_enquiry");
-        params.append("type", mode);
+        var body = {
+          cmd: "record_enquiry",
+          type: mode,
+          full_name: payload.full_name,
+          email: payload.email,
+          subject: payload.subject,
+          message: payload.message,
+          intent: payload.intent,
+          page_url: payload.page_url,
+          page_path: payload.page_path,
+          submitted_at: payload.submitted_at,
+          include_smartsuite: payload.include_smartsuite,
+          compiled_body: payload.compiled_body,
+        };
         if (token) {
-          params.append("g-recaptcha-response", token);
+          body["g-recaptcha-response"] = token;
         }
-        params.append("full_name", payload.full_name);
-        params.append("email", payload.email);
-        params.append("subject", payload.subject);
-        params.append("message", payload.message);
-        params.append("intent", payload.intent);
-        params.append("page_url", payload.page_url);
-        params.append("page_path", payload.page_path);
-        if (payload.organization) params.append("organization", payload.organization);
-        if (payload.priority) params.append("priority", payload.priority);
-        if (payload.referrer) params.append("referrer", payload.referrer);
-        params.append("submitted_at", payload.submitted_at);
-        params.append("compiled_body", payload.compiled_body);
+        if (payload.organization) body.organization = payload.organization;
+        if (payload.priority) body.priority = payload.priority;
+        if (payload.referrer) body.referrer = payload.referrer;
+        if (payload.package_id) body.package_id = payload.package_id;
 
         fetch(INQUIRY_URL, {
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
             Accept: "application/json, text/plain, */*",
           },
           mode: "cors",
           credentials: "omit",
-          body: params.toString(),
+          body: JSON.stringify(body),
         })
           .then(function (res) {
             return res.text().then(function () {
@@ -194,8 +286,6 @@
     });
   });
 
-  var STORAGE_PROMPT = "anybuild_inquiry_intent_prompt";
-
   document.querySelectorAll("[data-inquiry-form]").forEach(function (form) {
     var intentInput = form.querySelector('input[name="intent"]');
     if (intentInput) {
@@ -207,18 +297,26 @@
     var mode = form.getAttribute("data-form-mode") || "";
     if (mode !== "trial") return;
 
-    var draft = null;
-    try {
-      draft = sessionStorage.getItem(STORAGE_PROMPT);
-    } catch (e) {}
-    if (!draft) return;
+    var pkgSelect = form.querySelector('select[name="package_id"]');
+    if (pkgSelect) {
+      syncTrialPackageSelect(form);
+    }
 
     var msg = form.querySelector('[name="message"]');
     if (msg && !String(msg.value || "").trim()) {
-      msg.value = draft;
+      try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get("draft_source") === "session") {
+          var stored = trimOrNull(sessionStorage.getItem(HERO_DRAFT_STORAGE_KEY));
+          if (stored) {
+            msg.value = stored;
+            sessionStorage.removeItem(HERO_DRAFT_STORAGE_KEY);
+          }
+        } else {
+          var draft = trimOrNull(p.get("draft"));
+          if (draft) msg.value = draft;
+        }
+      } catch (e) {}
     }
-    try {
-      sessionStorage.removeItem(STORAGE_PROMPT);
-    } catch (e) {}
   });
 })();

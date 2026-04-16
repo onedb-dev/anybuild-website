@@ -1,172 +1,260 @@
 {
-  "title": "Pricing — Anybuild",
-  "description": "Predictable pricing for building and running production business applications. We price builders, applications, and automation, not end users.",
+  "title": "Pricing - Anybuild",
+  "description": "Predictable pricing for building and running production business applications. We price creators, applications, and automation, not end users.",
   "includeHeroScript": false,
-  "inpageNav": [
-    {
-      "label": "Build & Run",
-      "href": "#build-run"
-    },
-    {
-      "label": "Scale & Operate",
-      "href": "#scale-operate"
-    },
-    {
-      "label": "Add-ons",
-      "href": "#addons"
-    }
-  ],
+  "includePricingInquiryScript": true,
+  "includePricingCurrencyScript": true,
   "hero": {
     "kicker": "Anybuild",
     "title": "Pricing",
-    "subtitleHtml": "<strong>Predictable pricing for building and running real applications.</strong><br />We price what creates complexity (builders, applications, automation), not how many people use your software."
+    "subtitleHtml": "<strong>Predictable pricing for building and running real applications.</strong><br />We price what creates complexity (creators, applications, automation), not how many people use your software."
+  },
+  "pricingTabs": {
+    "primary": "Anybuild Platform",
+    "secondary": "Smartsuite"
   },
   "buildRun": {
     "title": "Build & Run",
     "lead": "For individuals and teams running real production applications.",
     "badge": "Pro is recommended",
-    "columns": [
-      "Trial",
-      "Starter",
-      "Pro",
-      "Scale"
-    ],
-    "rows": [
+    "tiers": [
       {
-        "label": "Price",
-        "cells": [
-          "€0",
-          "€25 / mo",
-          "€60 / mo",
-          "€125 / mo"
-        ]
+        "name": "Trial",
+        "package": "trial",
+        "price": "€0",
+        "amountEur": 0,
+        "recommended": false,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "1"
+          },
+          {
+            "label": "Applications",
+            "value": "Up to 2"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Shared (separate DBs)"
+          },
+          {
+            "label": "Storage",
+            "value": "500 MB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "Standard"
+          },
+          {
+            "label": "AI app & report generation",
+            "value": "✓"
+          },
+          {
+            "label": "Automation workflows",
+            "value": "—"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "—"
+          },
+          {
+            "label": "Included credits",
+            "value": "500 (one-time)"
+          },
+          {
+            "label": "Support",
+            "value": "Community"
+          }
+        ],
+        "cta": {
+          "label": "Try free",
+          "href": "try.html",
+          "primary": false
+        }
       },
       {
-        "label": "Builders",
-        "cells": [
-          "1",
-          "1",
-          "2",
-          "3"
-        ]
+        "name": "Starter",
+        "package": "starter",
+        "price": "€25 / mo",
+        "amountEur": 25,
+        "recommended": false,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "1"
+          },
+          {
+            "label": "Applications",
+            "value": "Up to 3"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Shared (separate DBs)"
+          },
+          {
+            "label": "Storage",
+            "value": "2 GB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "Standard"
+          },
+          {
+            "label": "AI app & report generation",
+            "value": "✓"
+          },
+          {
+            "label": "Automation workflows",
+            "value": "UI-driven"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "—"
+          },
+          {
+            "label": "Included credits",
+            "value": "2,000 / mo"
+          },
+          {
+            "label": "Support",
+            "value": "Standard"
+          }
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html",
+          "primary": false
+        }
       },
       {
-        "label": "Applications",
-        "cells": [
-          "Up to 2",
-          "Up to 3",
-          "Up to 5",
-          "Up to 10"
-        ]
+        "name": "Pro",
+        "package": "pro",
+        "price": "€60 / mo",
+        "amountEur": 60,
+        "recommended": true,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "2"
+          },
+          {
+            "label": "Applications",
+            "value": "Up to 5"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Shared (separate DBs)"
+          },
+          {
+            "label": "Storage",
+            "value": "5 GB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "Enhanced"
+          },
+          {
+            "label": "AI app & report generation",
+            "value": "✓"
+          },
+          {
+            "label": "Automation workflows",
+            "value": "✓"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "✓"
+          },
+          {
+            "label": "Included credits",
+            "value": "10,000 / mo"
+          },
+          {
+            "label": "Support",
+            "value": "Standard"
+          }
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html",
+          "primary": true
+        }
       },
       {
-        "label": "Users",
-        "cells": [
-          "Unlimited",
-          "Unlimited",
-          "Unlimited",
-          "Unlimited"
-        ]
-      },
-      {
-        "label": "Environment",
-        "cells": [
-          "Shared (separate DBs)",
-          "Shared (separate DBs)",
-          "Shared (separate DBs)",
-          "Shared (separate DBs)"
-        ]
-      },
-      {
-        "label": "Storage",
-        "cells": [
-          "500 MB",
-          "2 GB",
-          "5 GB",
-          "15 GB"
-        ]
-      },
-      {
-        "label": "Performance & throughput",
-        "cells": [
-          "Standard",
-          "Standard",
-          "Enhanced",
-          "Enhanced"
-        ]
-      },
-      {
-        "label": "AI app & report generation",
-        "cells": [
-          "✓",
-          "✓",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Automation workflows",
-        "cells": [
-          "—",
-          "UI-driven",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Public APIs & integrations",
-        "cells": [
-          "—",
-          "—",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Included credits",
-        "cells": [
-          "500 (one-time)",
-          "2,000 / mo",
-          "10,000 / mo",
-          "25,000 / mo"
-        ]
-      },
-      {
-        "label": "Support",
-        "cells": [
-          "Community",
-          "Standard",
-          "Standard",
-          "Priority"
-        ]
-      }
-    ],
-    "ctas": [
-      {
-        "label": "Try free",
-        "href": "try.html",
-        "primary": false
-      },
-      {
-        "label": "Get started",
-        "href": "try.html",
-        "primary": false
-      },
-      {
-        "label": "Get started",
-        "href": "try.html",
-        "primary": true
-      },
-      {
-        "label": "Get started",
-        "href": "try.html",
-        "primary": false
+        "name": "Scale",
+        "package": "scale",
+        "price": "€125 / mo",
+        "amountEur": 125,
+        "recommended": false,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "3"
+          },
+          {
+            "label": "Applications",
+            "value": "Up to 10"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Shared (separate DBs)"
+          },
+          {
+            "label": "Storage",
+            "value": "15 GB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "Enhanced"
+          },
+          {
+            "label": "AI app & report generation",
+            "value": "✓"
+          },
+          {
+            "label": "Automation workflows",
+            "value": "✓"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "✓"
+          },
+          {
+            "label": "Included credits",
+            "value": "25,000 / mo"
+          },
+          {
+            "label": "Support",
+            "value": "Priority"
+          }
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html",
+          "primary": false
+        }
       }
     ]
   },
   "explain": {
     "terms": [
-      "Builders are the people who build and maintain applications (models, workflows, reports, AI).",
+      "Creators are the people who build and maintain applications (models, workflows, reports, AI).",
       "Applications are independent business systems (e.g. CRM, HR, ERP, Compliance). Each application can have multiple UI portals.",
       "Users are unlimited on all plans. We do not charge per user.",
       "Environment is the runtime where your applications execute (compute + database + operational guarantees). Shared environments run on shared infrastructure with tenant isolation.",
@@ -184,148 +272,215 @@
   "scale": {
     "title": "Scale & Operate",
     "lead": "For business-critical systems and high-volume automation.",
-    "columns": [
-      "Business",
-      "Advanced",
-      "Enterprise"
-    ],
-    "rows": [
+    "tiers": [
       {
-        "label": "Price",
-        "cells": [
-          "€495 / mo",
-          "€1,995 / mo",
-          "From €3,995 / mo"
-        ]
+        "name": "Business",
+        "package": "business",
+        "price": "€495 / mo",
+        "amountEur": 495,
+        "recommended": false,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "5"
+          },
+          {
+            "label": "Applications",
+            "value": "Up to 20"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Dedicated (reserved)"
+          },
+          {
+            "label": "Storage",
+            "value": "50 GB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "Enhanced"
+          },
+          {
+            "label": "AI & automation",
+            "value": "✓"
+          },
+          {
+            "label": "Scheduling (CRON)",
+            "value": "✓"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "✓"
+          },
+          {
+            "label": "Queues & async processing",
+            "value": "Standard"
+          },
+          {
+            "label": "Audit logs",
+            "value": "✓"
+          },
+          {
+            "label": "Included credits",
+            "value": "50,000 / mo"
+          },
+          {
+            "label": "SLA",
+            "value": "Business"
+          },
+          {
+            "label": "Support",
+            "value": "Priority"
+          }
+        ],
+        "cta": {
+          "label": "Upgrade",
+          "href": "demo.html",
+          "primary": false
+        }
       },
       {
-        "label": "Builders",
-        "cells": [
-          "5",
-          "10",
-          "Custom"
-        ]
+        "name": "Advanced",
+        "package": "advanced",
+        "price": "€1,995 / mo",
+        "amountEur": 1995,
+        "recommended": true,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "10"
+          },
+          {
+            "label": "Applications",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Dedicated (reserved)"
+          },
+          {
+            "label": "Storage",
+            "value": "200 GB"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "High-throughput"
+          },
+          {
+            "label": "AI & automation",
+            "value": "✓"
+          },
+          {
+            "label": "Scheduling (CRON)",
+            "value": "✓"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "✓"
+          },
+          {
+            "label": "Queues & async processing",
+            "value": "Advanced"
+          },
+          {
+            "label": "Audit logs",
+            "value": "✓"
+          },
+          {
+            "label": "Included credits",
+            "value": "150,000 / mo"
+          },
+          {
+            "label": "SLA",
+            "value": "Advanced"
+          },
+          {
+            "label": "Support",
+            "value": "Premium"
+          }
+        ],
+        "cta": {
+          "label": "Upgrade",
+          "href": "demo.html",
+          "primary": true
+        }
       },
       {
-        "label": "Applications",
-        "cells": [
-          "Up to 20",
-          "Unlimited",
-          "Unlimited"
-        ]
-      },
-      {
-        "label": "Users",
-        "cells": [
-          "Unlimited",
-          "Unlimited",
-          "Unlimited"
-        ]
-      },
-      {
-        "label": "Environment",
-        "cells": [
-          "Dedicated (reserved)",
-          "Dedicated (reserved)",
-          "Multiple / Isolated"
-        ]
-      },
-      {
-        "label": "Storage",
-        "cells": [
-          "50 GB",
-          "200 GB",
-          "Custom"
-        ]
-      },
-      {
-        "label": "Performance & throughput",
-        "cells": [
-          "Enhanced",
-          "High-throughput",
-          "High-throughput+"
-        ]
-      },
-      {
-        "label": "AI & automation",
-        "cells": [
-          "✓",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Scheduling (CRON)",
-        "cells": [
-          "✓",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Public APIs & integrations",
-        "cells": [
-          "✓",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Queues & async processing",
-        "cells": [
-          "Standard",
-          "Advanced",
-          "High-throughput"
-        ]
-      },
-      {
-        "label": "Audit logs",
-        "cells": [
-          "✓",
-          "✓",
-          "✓"
-        ]
-      },
-      {
-        "label": "Included credits",
-        "cells": [
-          "50,000 / mo",
-          "150,000 / mo",
-          "300,000+ / mo"
-        ]
-      },
-      {
-        "label": "SLA",
-        "cells": [
-          "Business",
-          "Advanced",
-          "Custom"
-        ]
-      },
-      {
-        "label": "Support",
-        "cells": [
-          "Priority",
-          "Premium",
-          "Dedicated"
-        ]
-      }
-    ],
-    "ctas": [
-      {
-        "label": "Upgrade",
-        "href": "demo.html",
-        "primary": false
-      },
-      {
-        "label": "Upgrade",
-        "href": "demo.html",
-        "primary": true
-      },
-      {
-        "label": "Contact sales",
-        "href": "demo.html",
-        "primary": false
+        "name": "Enterprise",
+        "package": "enterprise",
+        "price": "",
+        "recommended": false,
+        "features": [
+          {
+            "label": "Creators",
+            "value": "Custom"
+          },
+          {
+            "label": "Applications",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Users",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Environment",
+            "value": "Multiple / Isolated"
+          },
+          {
+            "label": "Storage",
+            "value": "Custom"
+          },
+          {
+            "label": "Performance & throughput",
+            "value": "High-throughput+"
+          },
+          {
+            "label": "AI & automation",
+            "value": "✓"
+          },
+          {
+            "label": "Scheduling (CRON)",
+            "value": "✓"
+          },
+          {
+            "label": "Public APIs & integrations",
+            "value": "✓"
+          },
+          {
+            "label": "Queues & async processing",
+            "value": "High-throughput"
+          },
+          {
+            "label": "Audit logs",
+            "value": "✓"
+          },
+          {
+            "label": "Included credits",
+            "value": "300,000+ / mo"
+          },
+          {
+            "label": "SLA",
+            "value": "Custom"
+          },
+          {
+            "label": "Support",
+            "value": "Dedicated"
+          }
+        ],
+        "cta": {
+          "label": "Contact sales",
+          "href": "demo.html",
+          "primary": false
+        }
       }
     ]
   },
@@ -345,6 +500,80 @@
     "Premium AI models",
     "Enterprise support packages"
   ],
+  "smartsuite": {
+    "title": "Smartsuite",
+    "leadHtml": "Pricing is per organisation and per user. CRM and ERP each include Anybuild Pro.<br />The Smartsuite bundle includes Anybuild Scale.",
+    "packages": [
+      {
+        "name": "CRM",
+        "packageId": "crm",
+        "orgPrice": "€125",
+        "userPrice": "€25",
+        "orgEur": 125,
+        "userEur": 25,
+        "subtitle": "For Front Office",
+        "features": [
+          "Fully Managed Hosting",
+          "Sales Automation",
+          "Service Cases",
+          "Campaign Management",
+          "AI Data Capture",
+          "Mobile Clients",
+          "Includes Anybuild Pro"
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html"
+        },
+        "recommended": false
+      },
+      {
+        "name": "ERP",
+        "packageId": "erp",
+        "orgPrice": "€150",
+        "userPrice": "€35",
+        "orgEur": 150,
+        "userEur": 35,
+        "subtitle": "For Back Office",
+        "features": [
+          "Fully Managed Hosting",
+          "Accounting, Billing …",
+          "Logistics, Inventory …",
+          "Projects, Assets, HR …",
+          "Workflow Automations",
+          "AI Data Capture",
+          "Includes Anybuild Pro"
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html"
+        },
+        "recommended": false
+      },
+      {
+        "name": "Smartsuite",
+        "packageId": "smartsuite",
+        "orgPrice": "€195",
+        "userPrice": "€49",
+        "orgEur": 195,
+        "userEur": 49,
+        "subtitle": "CRM + ERP",
+        "features": [
+          "Fully Managed Hosting",
+          "Everything in CRM",
+          "Everything in ERP",
+          "External APIs",
+          "Advanced Support",
+          "Includes Anybuild Scale"
+        ],
+        "cta": {
+          "label": "Get started",
+          "href": "try.html"
+        },
+        "recommended": true
+      }
+    ]
+  },
   "sectionCta": {
     "id": "cta",
     "title": "Need a tailored plan?",

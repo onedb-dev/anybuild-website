@@ -15,6 +15,22 @@
     "lead": "We will confirm your request and send next steps by email.",
     "submitLabel": "Request access",
     "showPriority": false,
+    "showPackageSelect": true,
+    "packageLabel": "Package",
+    "packageOptionsAnybuild": [
+      { "value": "trial", "label": "Trial" },
+      { "value": "starter", "label": "Starter" },
+      { "value": "pro", "label": "Pro" },
+      { "value": "scale", "label": "Scale" },
+      { "value": "business", "label": "Business" },
+      { "value": "advanced", "label": "Advanced" },
+      { "value": "enterprise", "label": "Enterprise" }
+    ],
+    "packageOptionsSmartsuite": [
+      { "value": "crm", "label": "Application - CRM" },
+      { "value": "erp", "label": "Application - ERP" },
+      { "value": "smartsuite", "label": "Application - Smartsuite" }
+    ],
     "subjectLabel": "What you want to explore",
     "messageLabel": "Use case and any constraints",
     "organizationLabel": "Company (optional)"

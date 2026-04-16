@@ -57,6 +57,30 @@
       />
     </div>
 
+    {{#if inquiryForm.showPackageSelect}}
+      <div class="inquiry-field inquiry-field--full">
+        <label class="inquiry-label" for="inquiry-pricing-package">{{inquiryForm.packageLabel}} <span class="inquiry-req" aria-hidden="true">*</span></label>
+        <select
+          class="inquiry-select"
+          id="inquiry-pricing-package"
+          name="package_id"
+          required
+          aria-required="true"
+        >
+          {{#each inquiryForm.packageOptionsAnybuild}}
+            <option value="{{value}}">{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+      {{#if inquiryForm.packageOptionsSmartsuite}}
+        <template id="inquiry-package-options-smartsuite">
+          {{#each inquiryForm.packageOptionsSmartsuite}}
+            <option value="{{value}}">{{label}}</option>
+          {{/each}}
+        </template>
+      {{/if}}
+    {{/if}}
+
     {{#if inquiryForm.showPriority}}
       <div class="inquiry-field">
         <label class="inquiry-label" for="inquiry-priority">Priority <span class="inquiry-req" aria-hidden="true">*</span></label>

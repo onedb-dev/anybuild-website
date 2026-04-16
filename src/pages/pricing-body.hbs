@@ -1,14 +1,4 @@
 <div class="page-pricing">
-  {{#if inpageNav}}
-    <div class="inpage-nav-wrap">
-      <div class="container inpage-nav" aria-label="On this page">
-        {{#each inpageNav}}
-          <a href="{{href}}">{{label}}</a>
-        {{/each}}
-      </div>
-    </div>
-  {{/if}}
-
   <section class="hero">
     <div class="container">
       <div class="kicker">{{hero.kicker}}</div>
@@ -17,134 +7,211 @@
     </div>
   </section>
 
-  <section id="build-run">
-    <div class="container">
-      <div class="section-header">
-        <h2>{{buildRun.title}}</h2>
-        <p class="section-copy">{{buildRun.lead}}</p>
+  <section class="pricing-switch-section" aria-label="Pricing category">
+    <div class="container pricing-switch-bar">
+      <div class="pricing-switch" role="tablist" aria-label="Pricing options">
+        <button type="button" class="pricing-switch-tab is-active" role="tab" aria-selected="true" aria-controls="pricing-panel-platform" data-pricing-tab="platform">{{pricingTabs.primary}}</button>
+        <button type="button" class="pricing-switch-tab" role="tab" aria-selected="false" aria-controls="pricing-panel-smartsuite" data-pricing-tab="smartsuite">{{pricingTabs.secondary}}</button>
       </div>
+      <div class="currency-switch" role="group" aria-label="Currency">
+        <button type="button" class="currency-switch-btn is-active" data-currency="eur" aria-pressed="true" title="Euro">€</button>
+        <button type="button" class="currency-switch-btn" data-currency="gbp" aria-pressed="false" title="British pound">£</button>
+        <button type="button" class="currency-switch-btn" data-currency="usd" aria-pressed="false" title="US dollar">$</button>
+      </div>
+    </div>
+  </section>
 
-      <div class="card pricing-card">
-        <div class="pricing-card-head">
-          <div class="pricing-card-title">Plans</div>
-          <div class="pricing-badge">{{buildRun.badge}}</div>
+  <div id="pricing-panel-platform" role="tabpanel" aria-labelledby="pricing-panel-platform" data-pricing-panel="platform">
+    <section id="build-run">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{buildRun.title}}</h2>
+          <p class="section-copy">{{buildRun.lead}}</p>
+          {{#if buildRun.badge}}
+            <p class="pricing-section-note"><span class="pricing-badge">{{buildRun.badge}}</span></p>
+          {{/if}}
         </div>
-        <div class="pricing-table-wrap">
-          <table class="pricing-table" aria-label="Build and Run pricing table">
-            <thead>
-              <tr>
-                <th></th>
-                {{#each buildRun.columns}}
-                  <th>{{this}}</th>
+
+        <div class="platform-packages platform-packages--4" role="list">
+          {{#each buildRun.tiers}}
+            <article class="smartsuite-package-card platform-package-card{{#if recommended}} is-recommended{{/if}}" role="listitem">
+              <div class="smartsuite-package-top">
+                <span class="smartsuite-package-badge platform-package-badge">{{name}}</span>
+                {{#if recommended}}<span class="smartsuite-package-rec">Recommended</span>{{/if}}
+              </div>
+              <div class="smartsuite-package-prices" aria-label="Price">
+                {{#if price}}
+                  <div class="smartsuite-price-line">
+                    <span class="smartsuite-price-amount js-pricing-amount" data-amount-eur="{{amountEur}}" data-price-kind="monthly">{{price}}</span>
+                  </div>
+                {{else}}
+                  <div class="smartsuite-price-line">
+                    <span class="smartsuite-price-amount smartsuite-price-amount--contact">Contact sales for pricing</span>
+                  </div>
+                {{/if}}
+              </div>
+              <ul class="smartsuite-package-features platform-package-features">
+                {{#each features}}
+                  <li><strong class="platform-feature-label">{{label}}</strong> {{value}}</li>
                 {{/each}}
-              </tr>
-            </thead>
-            <tbody>
-              {{#each buildRun.rows}}
-                <tr>
-                  <th>{{label}}</th>
-                  {{#each cells}}
-                    <td>{{this}}</td>
-                  {{/each}}
-                </tr>
+              </ul>
+              <a class="smartsuite-package-cta pricing-cta{{#if cta.primary}} primary{{/if}}" href="{{cta.href}}" data-pricing-package="{{package}}">{{cta.label}}</a>
+            </article>
+          {{/each}}
+        </div>
+
+        <div class="page-pricing-split">
+          <div class="card pricing-card pricing-info-card">
+            <div class="pricing-card-head"><div class="pricing-card-title">What these terms mean</div></div>
+            <div class="pricing-card-body">
+              {{#each explain.terms}}
+                <p>{{this}}</p>
               {{/each}}
-              <tr class="pricing-cta-row">
-                <th></th>
-                {{#each buildRun.ctas}}
-                  <td><a class="pricing-cta{{#if primary}} primary{{/if}}" href="{{href}}">{{label}}</a></td>
+            </div>
+          </div>
+          <div class="card pricing-card pricing-info-card">
+            <div class="pricing-card-head"><div class="pricing-card-title">How credits work</div></div>
+            <div class="pricing-card-body">
+              <p>{{explain.creditsIntro}}</p>
+              <ul>
+                {{#each explain.creditsList}}
+                  <li>{{this}}</li>
                 {{/each}}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="page-pricing-split">
-        <div class="card pricing-card pricing-info-card">
-          <div class="pricing-card-head"><div class="pricing-card-title">What these terms mean</div></div>
-          <div class="pricing-card-body">
-            {{#each explain.terms}}
-              <p>{{this}}</p>
-            {{/each}}
+              </ul>
+              <p><strong>{{explain.creditsRule}}</strong></p>
+              <p>{{explain.creditsNote}}</p>
+            </div>
           </div>
         </div>
-        <div class="card pricing-card pricing-info-card">
-          <div class="pricing-card-head"><div class="pricing-card-title">How credits work</div></div>
+      </div>
+    </section>
+
+    <section id="scale-operate">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{scale.title}}</h2>
+          <p class="section-copy">{{scale.lead}}</p>
+        </div>
+        <div class="platform-packages platform-packages--3" role="list">
+          {{#each scale.tiers}}
+            <article class="smartsuite-package-card platform-package-card{{#if recommended}} is-recommended{{/if}}" role="listitem">
+              <div class="smartsuite-package-top">
+                <span class="smartsuite-package-badge platform-package-badge">{{name}}</span>
+                {{#if recommended}}<span class="smartsuite-package-rec">Recommended</span>{{/if}}
+              </div>
+              <div class="smartsuite-package-prices" aria-label="Price">
+                {{#if price}}
+                  <div class="smartsuite-price-line">
+                    <span class="smartsuite-price-amount js-pricing-amount" data-amount-eur="{{amountEur}}" data-price-kind="monthly">{{price}}</span>
+                  </div>
+                {{else}}
+                  <div class="smartsuite-price-line">
+                    <span class="smartsuite-price-amount smartsuite-price-amount--contact">Contact sales for pricing</span>
+                  </div>
+                {{/if}}
+              </div>
+              <ul class="smartsuite-package-features platform-package-features">
+                {{#each features}}
+                  <li><strong class="platform-feature-label">{{label}}</strong> {{value}}</li>
+                {{/each}}
+              </ul>
+              <a class="smartsuite-package-cta pricing-cta{{#if cta.primary}} primary{{/if}}" href="{{cta.href}}" data-pricing-package="{{package}}">{{cta.label}}</a>
+            </article>
+          {{/each}}
+        </div>
+
+        <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="principles">
+          <div class="pricing-card-head"><div class="pricing-card-title">Platform principles</div></div>
           <div class="pricing-card-body">
-            <p>{{explain.creditsIntro}}</p>
             <ul>
-              {{#each explain.creditsList}}
+              {{#each principles}}
                 <li>{{this}}</li>
               {{/each}}
             </ul>
-            <p><strong>{{explain.creditsRule}}</strong></p>
-            <p>{{explain.creditsNote}}</p>
+          </div>
+        </div>
+
+        <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="addons">
+          <div class="pricing-card-head"><div class="pricing-card-title">Add-ons</div></div>
+          <div class="pricing-card-body">
+            <ul>
+              {{#each addons}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section id="scale-operate">
-    <div class="container">
-      <div class="section-header">
-        <h2>{{scale.title}}</h2>
-        <p class="section-copy">{{scale.lead}}</p>
-      </div>
-      <div class="card pricing-card">
-        <div class="pricing-table-wrap">
-          <table class="pricing-table" aria-label="Scale and Operate pricing table">
-            <thead>
-              <tr>
-                <th></th>
-                {{#each scale.columns}}
-                  <th>{{this}}</th>
+  <div id="pricing-panel-smartsuite" role="tabpanel" aria-labelledby="pricing-panel-smartsuite" data-pricing-panel="smartsuite" hidden>
+    <section id="smartsuite-pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{smartsuite.title}}</h2>
+          <p class="section-copy">{{{smartsuite.leadHtml}}}</p>
+        </div>
+        <div class="smartsuite-packages" role="list">
+          {{#each smartsuite.packages}}
+            <article class="smartsuite-package-card{{#if recommended}} is-recommended{{/if}}" role="listitem">
+              <div class="smartsuite-package-top">
+                <span class="smartsuite-package-badge">{{name}}</span>
+                {{#if recommended}}<span class="smartsuite-package-rec">Recommended</span>{{/if}}
+              </div>
+              <div class="smartsuite-package-prices" aria-label="Pricing">
+                <div class="smartsuite-price-line">
+                  <span class="smartsuite-price-amount js-pricing-amount" data-amount-eur="{{orgEur}}" data-price-kind="plain">{{orgPrice}}</span>
+                  <span class="smartsuite-price-unit">Org / month</span>
+                </div>
+                <div class="smartsuite-price-line">
+                  <span class="smartsuite-price-amount js-pricing-amount" data-amount-eur="{{userEur}}" data-price-kind="plain">{{userPrice}}</span>
+                  <span class="smartsuite-price-unit">User / month</span>
+                </div>
+              </div>
+              <p class="smartsuite-package-subtitle">{{subtitle}}</p>
+              <ul class="smartsuite-package-features">
+                {{#each features}}
+                  <li>{{this}}</li>
                 {{/each}}
-              </tr>
-            </thead>
-            <tbody>
-              {{#each scale.rows}}
-                <tr>
-                  <th>{{label}}</th>
-                  {{#each cells}}
-                    <td>{{this}}</td>
-                  {{/each}}
-                </tr>
-              {{/each}}
-              <tr class="pricing-cta-row">
-                <th></th>
-                {{#each scale.ctas}}
-                  <td><a class="pricing-cta{{#if primary}} primary{{/if}}" href="{{href}}">{{label}}</a></td>
-                {{/each}}
-              </tr>
-            </tbody>
-          </table>
+              </ul>
+              <a class="btn{{#if recommended}} primary{{else}} secondary{{/if}} smartsuite-package-cta" href="{{cta.href}}" data-pricing-package="{{packageId}}">{{cta.label}} <span aria-hidden="true">→</span></a>
+            </article>
+          {{/each}}
         </div>
       </div>
-
-      <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="principles">
-        <div class="pricing-card-head"><div class="pricing-card-title">Platform principles</div></div>
-        <div class="pricing-card-body">
-          <ul>
-            {{#each principles}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-
-      <div class="card pricing-card pricing-info-card pricing-compact-list-card" id="addons">
-        <div class="pricing-card-head"><div class="pricing-card-title">Add-ons</div></div>
-        <div class="pricing-card-body">
-          <ul>
-            {{#each addons}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   {{> sectionCta sectionCta}}
 </div>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll("[data-pricing-tab]");
+    var panels = document.querySelectorAll("[data-pricing-panel]");
+
+    if (!tabs.length || !panels.length) return;
+
+    function setActive(tabKey) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-pricing-tab") === tabKey;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      panels.forEach(function (panel) {
+        var isActive = panel.getAttribute("data-pricing-panel") === tabKey;
+        panel.hidden = !isActive;
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        setActive(tab.getAttribute("data-pricing-tab"));
+      });
+    });
+
+    setActive("platform");
+  })();
+</script>

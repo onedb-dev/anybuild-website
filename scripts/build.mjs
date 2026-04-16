@@ -50,6 +50,54 @@ function canonicalUrl(siteUrl, htmlFilename) {
   return `${base}/${htmlFilename}`;
 }
 
+function escapeXml(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function writeSitemap(siteUrl, htmlFilenames) {
+  const base = (siteUrl || "").trim();
+  if (!base) {
+    console.warn("siteUrl missing; sitemap.xml not written.");
+    return;
+  }
+  const lastmod = new Date().toISOString().split("T")[0];
+  const lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ];
+  for (const filename of htmlFilenames) {
+    const loc = escapeXml(canonicalUrl(siteUrl, filename));
+    lines.push("  <url>");
+    lines.push(`    <loc>${loc}</loc>`);
+    lines.push(`    <lastmod>${lastmod}</lastmod>`);
+    lines.push("  </url>");
+  }
+  lines.push("</urlset>");
+  write("dist/sitemap.xml", lines.join("\n") + "\n");
+}
+
+function writeRobotsTxt(siteUrl) {
+  const base = (siteUrl || "").trim().replace(/\/$/, "");
+  if (!base) {
+    console.warn("siteUrl missing; robots.txt not written.");
+    return;
+  }
+  const sitemapUrl = `${base}/sitemap.xml`;
+  const body = [
+    "User-agent: *",
+    "Allow: /",
+    "",
+    `Sitemap: ${sitemapUrl}`,
+    "",
+  ].join("\n");
+  write("dist/robots.txt", body);
+}
+
 function buildJsonLd(merged, filename) {
   const base = (merged.siteUrl || "").replace(/\/$/, "");
   if (!base) return "";
@@ -117,6 +165,8 @@ function buildPage(filename, bodyTemplateRel, pageData = {}) {
 
 write("dist/main.css", read("src/styles/main.css"));
 write("dist/nav.js", read("src/scripts/nav.js"));
+write("dist/pricing-inquiry.js", read("src/scripts/pricing-inquiry.js"));
+write("dist/pricing-currency.js", read("src/scripts/pricing-currency.js"));
 write("dist/platform-expand.js", read("src/scripts/platform-expand.js"));
 write("dist/faq-search.js", read("src/scripts/faq-search.js"));
 write("dist/inquiry-form.js", read("src/scripts/inquiry-form.js"));
@@ -147,4 +197,9 @@ for (const [filename, jsonPath, bodyPath] of pages) {
   buildPage(filename, bodyPath, loadJson(jsonPath));
 }
 
-console.log("Build complete: dist/ (flat HTML, main.css, hero-mock.js)");
+writeSitemap(site.siteUrl, ["index.html", ...pages.map((p) => p[0])]);
+writeRobotsTxt(site.siteUrl);
+
+console.log(
+  "Build complete: dist/ (flat HTML, main.css, sitemap.xml, robots.txt, hero-mock.js)"
+);

@@ -59,6 +59,29 @@ function escapeXml(s) {
     .replace(/'/g, "&apos;");
 }
 
+function normalizeMetaText(s) {
+  if (s == null) return "";
+  // Meta tags and titles should not contain fancy dash characters.
+  return String(s).replace(/[—–]/g, "-");
+}
+
+function standardizePageTitle(title, brandName = "Anybuild") {
+  const raw = normalizeMetaText(title).trim();
+  const brand = normalizeMetaText(brandName).trim();
+  if (!raw) return raw;
+  if (!brand) return raw;
+
+  const suffix = ` - ${brand}`;
+  if (raw.endsWith(suffix)) return raw;
+
+  const brandPrefix = `${brand} - `;
+  if (raw.startsWith(brandPrefix)) {
+    return `${raw.slice(brandPrefix.length).trim()}${suffix}`;
+  }
+
+  return `${raw}${suffix}`;
+}
+
 function writeSitemap(siteUrl, htmlFilenames) {
   const base = (siteUrl || "").trim();
   if (!base) {
@@ -142,20 +165,25 @@ function buildPage(filename, bodyTemplateRel, pageData = {}) {
     ...pageData,
     meta: { ...(site.meta || {}), ...(pageData.meta || {}) },
   };
+  const brandName = merged.brand?.name || "Anybuild";
+  merged.title = merged.title
+    ? standardizePageTitle(merged.title, brandName)
+    : merged.title;
+  if (merged.description) merged.description = normalizeMetaText(merged.description);
   merged.effectiveDescription = (
     merged.description ||
     site.defaultDescription ||
     ""
   ).trim();
+  merged.effectiveDescription = normalizeMetaText(merged.effectiveDescription);
   merged.keywords = Object.prototype.hasOwnProperty.call(pageData, "keywords")
     ? pageData.keywords
     : site.defaultPageKeywords || "";
   if (merged.canonicalUrl === undefined && merged.siteUrl) {
     merged.canonicalUrl = canonicalUrl(merged.siteUrl, filename);
   }
-  const brandName = merged.brand?.name || "Anybuild";
   merged.ogImageAlt =
-    merged.meta?.ogImageAlt || `${merged.title} — ${brandName}`;
+    merged.meta?.ogImageAlt || `${merged.title} - ${brandName}`;
   merged.jsonLd = buildJsonLd(merged, filename);
   const data = merged;
   const bodyTpl = Handlebars.compile(read(bodyTemplateRel));

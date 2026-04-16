@@ -24,6 +24,28 @@ function loadJson(rel) {
   return JSON.parse(read(rel));
 }
 
+function loadJsonIfExists(rel) {
+  const full = path.join(root, rel);
+  if (!fs.existsSync(full)) return null;
+  return JSON.parse(read(rel));
+}
+
+function copyDir(relFrom, relTo) {
+  const from = path.join(root, relFrom);
+  if (!fs.existsSync(from)) return;
+  const to = path.join(root, relTo);
+  fs.mkdirSync(to, { recursive: true });
+  for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
+    const src = path.join(from, entry.name);
+    const dst = path.join(to, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(path.join(relFrom, entry.name), path.join(relTo, entry.name));
+    } else {
+      fs.copyFileSync(src, dst);
+    }
+  }
+}
+
 function registerPartials() {
   const dir = path.join(root, "src/partials");
   for (const file of fs.readdirSync(dir)) {
@@ -121,6 +143,78 @@ function writeRobotsTxt(siteUrl) {
   write("dist/robots.txt", body);
 }
 
+/**
+ * Storyboard image URLs:
+ * - Default: `image` / `fullImage` in src/data/pages/home.json (relative paths → work with dist/assets).
+ * - CloudFront paths are often opaque (UUIDs); use per-frame `imageRemote` and optional `fullImageRemote`
+ *   (full HTTPS URLs). Optionally put them only in src/data/pages/home-storyboard-remote.json
+ *   (same structure: { "frames": [ { "imageRemote": "...", "fullImageRemote": "..." }, ... ] })
+ *   merged by index with home.json so UUIDs can stay out of git.
+ * - Production HTML: ANYBUILD_STORYBOARD_USE_REMOTE=1 replaces `image`/`fullImage` emitted to HTML
+ *   with the remote fields when set; missing remote fields fall back to local paths for that frame.
+ */
+function storyboardUseRemoteUrls() {
+  const v = process.env.ANYBUILD_STORYBOARD_USE_REMOTE;
+  return v === "1" || /^true$/i.test(String(v || "").trim());
+}
+
+function mergeStoryboardRemoteOverlay(pageData, overlay) {
+  if (!pageData?.sectionStoryboard?.frames || !overlay?.frames) return pageData;
+  if (!Array.isArray(overlay.frames)) return pageData;
+  const nHome = pageData.sectionStoryboard.frames.length;
+  const nOver = overlay.frames.length;
+  if (nHome !== nOver) {
+    console.warn(
+      `home-storyboard-remote.json: frames length (${nOver}) does not match home.json (${nHome}); merging by index.`
+    );
+  }
+  const frames = pageData.sectionStoryboard.frames.map((f, i) => {
+    const o = overlay.frames[i];
+    if (!o || typeof o !== "object") return { ...f };
+    return { ...f, ...o };
+  });
+  return {
+    ...pageData,
+    sectionStoryboard: {
+      ...pageData.sectionStoryboard,
+      frames,
+    },
+  };
+}
+
+function trimStoryboardUrl(s) {
+  if (s == null || typeof s !== "string") return "";
+  return s.trim();
+}
+
+function applyStoryboardRemoteUrlsForHtml(pageData) {
+  if (!storyboardUseRemoteUrls() || !pageData?.sectionStoryboard?.frames) {
+    return pageData;
+  }
+  const frames = pageData.sectionStoryboard.frames.map((f) => {
+    const image = trimStoryboardUrl(f.imageRemote) || f.image;
+    const fullImage = trimStoryboardUrl(f.fullImageRemote) || f.fullImage;
+    return { ...f, image, fullImage };
+  });
+  return {
+    ...pageData,
+    sectionStoryboard: {
+      ...pageData.sectionStoryboard,
+      frames,
+    },
+  };
+}
+
+function prepareHomePageData() {
+  let home = loadJson("src/data/pages/home.json");
+  const overlay = loadJsonIfExists("src/data/pages/home-storyboard-remote.json");
+  if (overlay) {
+    home = mergeStoryboardRemoteOverlay(home, overlay);
+  }
+  home = applyStoryboardRemoteUrlsForHtml(home);
+  return home;
+}
+
 function buildJsonLd(merged, filename) {
   const base = (merged.siteUrl || "").replace(/\/$/, "");
   if (!base) return "";
@@ -199,8 +293,9 @@ write("dist/platform-expand.js", read("src/scripts/platform-expand.js"));
 write("dist/faq-search.js", read("src/scripts/faq-search.js"));
 write("dist/inquiry-form.js", read("src/scripts/inquiry-form.js"));
 write("dist/hero-mock.js", read("src/scripts/hero-mock.js"));
+copyDir("src/assets", "dist/assets");
 
-const home = loadJson("src/data/pages/home.json");
+const home = prepareHomePageData();
 buildPage("index.html", "src/pages/home-body.hbs", home);
 
 const pages = [

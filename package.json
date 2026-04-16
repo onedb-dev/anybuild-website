@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:remote": "ANYBUILD_STORYBOARD_USE_REMOTE=1 node scripts/build.mjs",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

@@ -1,0 +1,58 @@
+{
+  "frames": [
+    {
+      "image": "assets/hero-sequence/frame-01.png",
+      "step": "Step 1",
+      "title": "Start with a plain-language prompt",
+      "desc": "Describe the business app you want, and let the wizard propose the first draft of the specification."
+    },
+    {
+      "image": "assets/hero-sequence/frame-02.png",
+      "step": "Step 2",
+      "title": "Refine the generated specification",
+      "desc": "The AI asks clarifying questions and expands the app definition. You answer in plain language: respond to those questions, or add other notes and requirements whenever you need to."
+    },
+    {
+      "image": "assets/hero-sequence/frame-03.png",
+      "step": "Step 3",
+      "title": "Generate the data model, then tweak it",
+      "desc": "Move from specification to ERD. You stay on the diagram and iterate as long as you need: refine with AI, or edit the model manually and have AI review. Clarifying questions appear along the way, and you can answer those or add other requirements in plain language."
+    },
+    {
+      "image": "assets/hero-sequence/frame-04.png",
+      "step": "Step 4",
+      "title": "Set theme, spacing, and visual style",
+      "desc": "Pick colors, layout rules, typography, and component styling to shape the application experience. All of it can be revised after the initial build."
+    },
+    {
+      "image": "assets/hero-sequence/frame-05.png",
+      "step": "Step 5",
+      "title": "Brand the application and organize navigation",
+      "desc": "Name the app, set logos, choose the home page, and fine-tune the menu structure before publishing."
+    },
+    {
+      "image": "assets/hero-sequence/frame-06.png",
+      "step": "Step 6",
+      "title": "Publish and open the generated app",
+      "desc": "Once the build is complete, the portal is ready immediately \u2014 no handoff, no separate deployment step."
+    },
+    {
+      "image": "assets/hero-sequence/frame-07.png",
+      "step": "Step 7",
+      "title": "Users enter the finished portal",
+      "desc": "What started as a prompt becomes a real business application with branded entry, navigation, and workflows."
+    },
+    {
+      "image": "assets/hero-sequence/frame-08.png",
+      "step": "Step 8",
+      "title": "Create records with guided forms",
+      "desc": "The portal is not a mockup. It is the actual application the team can start using right away."
+    },
+    {
+      "image": "assets/hero-sequence/frame-09.png",
+      "step": "Step 9",
+      "title": "End on the live business view",
+      "desc": "Close on the finished CRM list screen to reinforce the outcome: fast creation, human refinement, real operations."
+    }
+  ]
+}

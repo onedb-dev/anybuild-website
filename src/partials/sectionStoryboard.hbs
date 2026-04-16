@@ -1,0 +1,80 @@
+<section class="section section-storyboard" id="{{sectionStoryboard.id}}">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">{{sectionStoryboard.label}}</div>
+      <h2>{{sectionStoryboard.title}}</h2>
+      <p class="section-copy">{{{sectionStoryboard.copyHtml}}}</p>
+    </div>
+
+    <div class="storyboard card" data-storyboard>
+      <div class="storyboard-stage">
+        {{#with sectionStoryboard.frames.[0]}}
+          <button type="button" class="storyboard-image-button" data-storyboard-open>
+            <img
+              class="storyboard-image"
+              src="{{image}}"
+              alt="{{title}}"
+              loading="eager"
+              decoding="async"
+              data-storyboard-image
+            />
+          </button>
+          <div class="storyboard-meta" data-storyboard-meta>
+            <span class="storyboard-step" data-storyboard-step>{{step}}</span>
+            <h3 data-storyboard-title>{{title}}</h3>
+            <p data-storyboard-desc>{{desc}}</p>
+          </div>
+        {{/with}}
+      </div>
+
+      <div class="storyboard-controls" role="tablist" aria-label="Animation steps">
+        {{#each sectionStoryboard.frames}}
+          <button
+            type="button"
+            class="storyboard-dot{{#if @first}} is-active{{/if}}"
+            role="tab"
+            aria-selected="{{#if @first}}true{{else}}false{{/if}}"
+            aria-label="{{#if step}}{{step}}{{else}}{{title}}{{/if}}"
+            data-storyboard-jump="{{@index}}"
+          ></button>
+        {{/each}}
+      </div>
+      <p class="storyboard-note">
+        Tip: hover pauses the sequence. Click an image to open it full-screen.
+      </p>
+
+      <div class="storyboard-data" hidden aria-hidden="true">
+        {{#each sectionStoryboard.frames}}
+          <span
+            data-src="{{image}}"
+            data-full-src="{{fullImage}}"
+            data-object-position="{{objectPosition}}"
+            data-step="{{step}}"
+            data-title="{{title}}"
+            data-desc="{{desc}}"
+            data-kind="{{kind}}"
+          ></span>
+        {{/each}}
+      </div>
+
+      <div class="storyboard-modal" data-storyboard-modal hidden aria-hidden="true">
+        <button
+          type="button"
+          class="storyboard-modal-close"
+          aria-label="Close"
+          data-storyboard-close
+        >
+          ×
+        </button>
+
+        <img class="storyboard-modal-image" alt="" data-storyboard-modal-image />
+
+        <div class="storyboard-modal-meta" aria-live="polite">
+          <span class="storyboard-step" data-storyboard-modal-step></span>
+          <h3 data-storyboard-modal-title></h3>
+          <p data-storyboard-modal-desc></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

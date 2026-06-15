@@ -1,5 +1,5 @@
 {
-  "title": "About — Anybuild",
+  "title": "About | Anybuild",
   "description": "Anybuild is a model-driven platform by Onedb, shaped by years of ERP and CRM delivery in real business environments.",
   "includeHeroScript": false,
   "inpageNav": [
@@ -13,6 +13,7 @@
     "kicker": "About",
     "headlineHtml": "About Anybuild",
     "copyHtml": "Anybuild is a model-driven platform for building business systems.<br />It is developed by Onedb, a company focused on ERP and CRM systems in real environments.",
+    "missionHtml": "Software should evolve with the business, not be rebuilt every few years. Anybuild gives teams a model-driven way to build, run, and change operational systems at any scale.",
     "primary": {
       "label": "Try for free",
       "href": "try.html"

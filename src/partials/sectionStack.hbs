@@ -1,0 +1,32 @@
+<section id="{{id}}" class="section-band">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{title}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="stack-layers">
+      {{#each layers}}
+        <div class="stack-layer">
+          <div class="stack-layer-num">{{num}}</div>
+          <div>
+            <h3>{{title}}</h3>
+            <p>{{copy}}</p>
+            {{#if items}}
+              <div class="stack-tags">
+                {{#each items}}
+                  <span class="stack-tag">{{this}}</span>
+                {{/each}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{#if footnote}}
+      <p class="stack-footnote">{{footnote}}</p>
+    {{/if}}
+  </div>
+</section>

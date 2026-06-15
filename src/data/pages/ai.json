@@ -1,6 +1,6 @@
 {
-  "title": "AI — Anybuild",
-  "description": "How Anybuild uses AI: inside the platform, with external tools, and in your apps—plus what AI does not control. The platform governs structure, validation, and runtime.",
+  "title": "AI | Anybuild",
+  "description": "How Anybuild uses AI: inside the platform, with external tools, and in your apps, plus what AI does not control. The platform governs structure, validation, and runtime.",
   "includeHeroScript": false,
   "inpageNav": [
     { "label": "Internal AI", "href": "#where" },
@@ -17,8 +17,8 @@
     "pipeline": [
       {
         "title": "AI input",
-        "copy": "Prompt, spec, SQL help, external tools.",
-        "items": ["Requirements", "Views and SQL", "UI work"]
+        "copy": "Platform AI for spec and model. External AI for evolution.",
+        "items": ["Specification", "Data model", "Views and SQL", "Extension work"]
       },
       {
         "title": "Anybuild",
@@ -69,11 +69,11 @@
       "id": "tools",
       "label": "External AI",
       "title": "Outside the platform",
-      "copyHtml": "Use external AI tools like Cursor, Claude Code, and similar.<br />Anybuild validates, normalizes, and runs the result.",
+      "copyHtml": "Use external AI tools like Cursor, Claude Code, and Codex after the initial build.<br />Anybuild validates, normalizes, and runs what comes back in.",
       "cards": [
         {
-          "title": "Use external tools",
-          "body": "Use tools like Cursor, Claude Code, and similar for UI work."
+          "title": "For extension work",
+          "body": "Use Cursor, Claude Code, or Codex for UI components, custom logic, and other work beyond the first generated version."
         },
         {
           "title": "Bring work back",

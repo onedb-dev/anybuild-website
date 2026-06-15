@@ -3,7 +3,7 @@
     <nav class="nav-main" aria-label="Main">
       <a class="brand" href="{{brand.href}}">
         {{#if brand.useLogoImage}}
-          <img src="{{{brand.logoUrl}}}" alt="{{brand.name}}" style="height:{{brand.logoHeight}}px;" />
+          <img class="brand-logo" src="{{{brand.logoUrl}}}" alt="{{brand.name}}" style="height:{{brand.logoHeight}}px;" />
         {{else}}
           <span class="brand-mark" aria-hidden="true"></span>
           <span>{{brand.name}}</span>

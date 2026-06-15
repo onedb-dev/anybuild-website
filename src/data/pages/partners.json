@@ -1,5 +1,5 @@
 {
-  "title": "Partners — Anybuild",
+  "title": "Partners | Anybuild",
   "description": "Build systems in hours, reuse ERP/CRM foundations, and extend per client with Anybuild's partner model.",
   "includeHeroScript": false,
   "hero": {
@@ -18,15 +18,18 @@
   "profiles": [
     {
       "title": "Developer companies",
-      "text": "Ship systems faster with less setup work.<br />Focus on logic, not repetition."
+      "text": "Ship systems faster with less setup work.<br />Focus on logic, not repetition.",
+      "benefits": ["Faster delivery: weeks instead of months", "Higher margins: charge for expertise, not boilerplate", "Less maintenance: systems evolve inside the platform"]
     },
     {
       "title": "Consultancies",
-      "text": "Deliver working systems earlier.<br />Avoid rebuilding for each client."
+      "text": "Deliver working systems earlier.<br />Avoid rebuilding for each client.",
+      "benefits": ["Replace legacy systems at speed", "Deliver working systems, not roadmaps", "Reduce integration and scope-creep risk"]
     },
     {
       "title": "Industry experts",
-      "text": "Turn domain knowledge into systems.<br />Reuse across clients."
+      "text": "Turn domain knowledge into systems.<br />Reuse across clients.",
+      "benefits": ["Turn expertise into repeatable products", "Build vertical platforms", "Monetise through the Anybuild Store"]
     }
   ],
   "buildSection": {

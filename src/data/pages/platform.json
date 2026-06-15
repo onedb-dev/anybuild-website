@@ -1,6 +1,6 @@
 {
-  "title": "Platform — Anybuild",
-  "description": "The Anybuild platform: one model for data, views, workflows, UI, reporting, and security—built to define, run, and change systems over time.",
+  "title": "Platform | Anybuild",
+  "description": "The Anybuild platform: one model for data, views, workflows, UI, reporting, and security, all built to define, run, and change systems over time.",
   "includeHeroScript": false,
   "includePlatformScript": true,
   "inpageNav": [

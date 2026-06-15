@@ -2,9 +2,9 @@
   "lang": "en",
   "assetPrefix": "",
   "siteUrl": "https://anybuild.ai",
-  "defaultDescription": "Build production business systems on Anybuild's model-driven platform—security, workflows, reporting, and SQL views. AI-accelerated where useful; you stay in control.",
+  "defaultDescription": "Build production business systems on Anybuild's model-driven platform with security, workflows, reporting, and SQL views. AI-accelerated where useful; you stay in control.",
   "defaultPageKeywords": "Anybuild, model-driven platform, business systems, ERP, CRM, Onedb, enterprise software, AI-assisted development",
-  "themeColor": "#0a1525",
+  "themeColor": "#ffffff",
   "ogLocale": "en_US",
   "meta": {
     "ogImage": "https://d1kh6r42218xf.cloudfront.net/153e3098-da30-4836-84b9-1756a749b0ae/ddfa748b-1e89-406a-ad6b-e267fd33d9da/f7e56bfd-eb9c-4df9-9629-27322dd8eb26/a2f98692-e511-44c4-a72c-d4875bafebb4?Expires=2054938039&Key-Pair-Id=K1LSJ2R0FTCUKR&Signature=Htyq0KY78V98DU6JNgPlOJFSpQADgT5utlf50zV0br~JL5kpCEXqeDyXrSmxJETiz6fPNwtYr3lA~8ivtvawy3OEVFx0ZJqsgsDa4IMNZ1PUMhSDugcTRSWBYj8tsa~wmus-v2Sfm0K~4-RhM7z8wpIf~DuRhSgyPeY4nOrCrDz57Q9jdK4cBOdvxlXNvA-M~FOBHeI0HGRNMCWn9AOOMWO~DIKiVxoledITDW7PbQb60dl5DibYPTPZ~FwW3VQ22T1ZNB8-2JRT3IW8FG4kJ4w8-vC0zP-k-mf6HUIr1VvChG1VOC6rjjLIZdJVKdQQq5D4b39qw0E79GVCM7Co2A__",
@@ -45,6 +45,11 @@
       {
         "label": "Resources",
         "items": [
+          {
+            "label": "Use cases",
+            "description": "Finance, CRM, operations, and industry platform examples.",
+            "href": "use-cases.html"
+          },
           {
             "label": "About Anybuild",
             "description": "Company story, leadership, and locations.",

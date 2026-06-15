@@ -14,6 +14,9 @@
       <div class="kicker">{{hero.kicker}}</div>
       <h1>{{{hero.headlineHtml}}}</h1>
       <p class="hero-copy">{{{hero.copyHtml}}}</p>
+      {{#if hero.missionHtml}}
+        <p class="hero-mission">{{{hero.missionHtml}}}</p>
+      {{/if}}
       <div class="cta-row">
         <a class="btn primary" href="{{hero.primary.href}}">{{hero.primary.label}}</a>
         <a class="btn secondary" href="{{hero.secondary.href}}">{{hero.secondary.label}}</a>

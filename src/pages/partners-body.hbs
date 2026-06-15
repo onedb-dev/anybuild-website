@@ -27,6 +27,13 @@
         <div class="card">
           <h3>{{title}}</h3>
           <p>{{{text}}}</p>
+          {{#if benefits}}
+            <ul class="partner-benefits">
+              {{#each benefits}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          {{/if}}
         </div>
       {{/each}}
     </div>

@@ -1,6 +1,61 @@
 {
-  "title": "Use cases — Anybuild",
-  "pageHeading": "Use cases",
-  "pageIntro": "Industry and workflow stories will live here: how teams model requirements, ship systems, and evolve them over time. Stub page until narratives and examples are drafted.",
-  "includeHeroScript": false
+  "title": "Use cases | Anybuild",
+  "description": "How teams use Anybuild for finance, CRM, operations, and industry-specific platforms: model-driven systems that evolve over time.",
+  "includeHeroScript": false,
+  "hero": {
+    "kicker": "Use cases",
+    "headlineHtml": "Operational systems<br />that adapt",
+    "copyHtml": "Teams use Anybuild to model requirements, ship production systems, and evolve them without rebuilding from scratch."
+  },
+  "cases": [
+    {
+      "num": "01",
+      "title": "Finance automation",
+      "copy": "Automate invoice processing, reconciliation, reporting, and approvals. Reduce month-end close cycles with full audit trails and compliance governance built in.",
+      "outcomes": ["Audit-ready workflows", "Linked transactions across ERP", "Reporting on governed data"]
+    },
+    {
+      "num": "02",
+      "title": "Sales & CRM",
+      "copy": "Deploy a CRM that reflects your actual sales motion, pipeline management, forecasting, and customer intelligence on the same model as operations.",
+      "outcomes": ["Lead to invoice in one system", "AI-assisted data capture", "Dashboards from SQL views"]
+    },
+    {
+      "num": "03",
+      "title": "Operations & workflows",
+      "copy": "Connect procurement, inventory, fulfilment, and service in one governed system. Eliminate handoff delays and create visibility across the operation.",
+      "outcomes": ["Cross-functional automation", "Triggers and nested workflows", "Real-time operational data"]
+    },
+    {
+      "num": "04",
+      "title": "Industry-specific platforms",
+      "copy": "Build purpose-built vertical systems for logistics, professional services, manufacturing, or compliance, without generic software compromises.",
+      "outcomes": ["Reusable partner solutions", "Per-client adaptation", "Distribution via Anybuild Store"]
+    },
+    {
+      "num": "05",
+      "title": "Custom line-of-business apps",
+      "copy": "Start from a spec, shape the model, and generate a working application with security, workflows, and reporting ready from day one.",
+      "outcomes": ["Hours to first version", "Manual control over the model", "Evolvable after generation"]
+    },
+    {
+      "num": "06",
+      "title": "ERP/CRM modernisation",
+      "copy": "Replace fragmented tools with Onedb Smartsuite on the Anybuild platform, or extend Smartsuite with integrated line-of-business applications.",
+      "outcomes": ["Shared entities front to back", "One database", "Extend safely over time"]
+    }
+  ],
+  "sectionCta": {
+    "id": "cta",
+    "title": "See how Anybuild fits your use case",
+    "copyHtml": "Book a walkthrough tailored to your team, or try the platform free.",
+    "primary": {
+      "label": "Book a demo",
+      "href": "demo.html"
+    },
+    "secondary": {
+      "label": "Try for free",
+      "href": "try.html"
+    }
+  }
 }

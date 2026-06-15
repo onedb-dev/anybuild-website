@@ -314,6 +314,7 @@ const pages = [
   ["about.html", "src/data/pages/about.json", "src/pages/about-body.hbs"],
   ["demo.html", "src/data/pages/demo.json", "src/pages/inquiry-page-body.hbs"],
   ["try.html", "src/data/pages/try.json", "src/pages/inquiry-page-body.hbs"],
+  ["use-cases.html", "src/data/pages/use-cases.json", "src/pages/use-cases-body.hbs"],
 ];
 
 for (const [filename, jsonPath, bodyPath] of pages) {

@@ -1,0 +1,24 @@
+<section id="{{id}}" class="section-band">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{title}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="testimonial-grid">
+      {{#each quotes}}
+        <blockquote class="testimonial-card">
+          <p class="testimonial-quote">"{{quote}}"</p>
+          <footer class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">{{initials}}</span>
+            <span>
+              <strong>{{name}}</strong>
+              <span class="testimonial-role">{{role}}</span>
+            </span>
+          </footer>
+        </blockquote>
+      {{/each}}
+    </div>
+  </div>
+</section>

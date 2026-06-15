@@ -4,6 +4,14 @@
       <div class="section-label">{{label}}</div>
       <h2>{{{titleHtml}}}</h2>
       <p class="section-copy">{{{copyHtml}}}</p>
+      {{#if aiTools}}
+        <div class="ai-tool-row">
+          <span class="ai-tool-label">Works with</span>
+          {{#each aiTools}}
+            <span class="ai-tool-tag">{{this}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
     </div>
 
     <div class="grid-3">

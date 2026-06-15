@@ -1,12 +1,15 @@
 {
   "title": "Anybuild - Model-Driven Platform for Business Systems",
-  "description": "Build production business systems in hours on a model-driven platform—security, workflows, reporting, and SQL views included. AI-accelerated where useful; you stay in control.",
+  "description": "Build production business systems in hours on a model-driven platform with security, workflows, reporting, and SQL views included. AI-accelerated where useful; you stay in control.",
   "includeHeroScript": true,
   "hero": {
     "kicker": "Model-Driven Platform for Business Systems",
     "headlineHtml": "Build production systems<br />in hours",
     "subtagline": "AI speed. Full control.",
-    "copyHtml": "Model-driven platform with built-in security, workflows, and reporting.<br />Built for production. Ready to run.",
+    "copyLines": [
+      "Built-in security, workflows, and reporting.",
+      "Collaborate with AI on the spec. Evolve in the platform or with your favorite AI tool."
+    ],
     "pills": [
       "Model-first",
       "AI optional",
@@ -48,23 +51,23 @@
     "flowSteps": [
       {
         "num": "01",
-        "title": "Define requirements",
-        "copy": "Start with business requirements manually or with AI assistance. Refine the spec at any time."
+        "title": "Build the specification",
+        "copy": "Collaborate with AI inside Anybuild to draft and refine requirements. Edit manually at any point."
       },
       {
         "num": "02",
-        "title": "Shape the system model",
-        "copy": "Move through ERD and structure. Edit entities, relations, rules, and behaviors before generation."
+        "title": "Generate the data model",
+        "copy": "Move from spec to ERD and structure. Refine entities, relations, rules, and behaviors before generation."
       },
       {
         "num": "03",
-        "title": "Generate the initial application",
-        "copy": "Produce a working system on top of a governed runtime with permissions, workflows, and reporting ready from day one."
+        "title": "Generate the application",
+        "copy": "Produce a working system on a governed runtime with permissions, workflows, and reporting from day one."
       },
       {
         "num": "04",
-        "title": "Evolve without rebuilding",
-        "copy": "Extend entities, SQL views, triggers, workflows, security, and UI inside the platform or via approved external AI tools."
+        "title": "Evolve the system",
+        "copy": "Extend with platform tools, or use your favorite AI tool. Artifacts return under platform control."
       }
     ]
   },
@@ -77,22 +80,208 @@
       {
         "icon": "✦",
         "title": "Define",
-        "body": "Capture requirements as structured intent. Start manually or use AI to accelerate the first version."
+        "body": "Collaborate with AI in the platform to draft the specification. Refine manually or with AI until the intent is clear."
       },
       {
         "icon": "◫",
         "title": "Model",
-        "body": "Refine the spec through a governed data model and ERD, with manual edits always available."
+        "body": "Generate and refine the data model and ERD. Edit entities, relations, and rules before the first application build."
       },
       {
         "icon": "⚙",
         "title": "Generate",
-        "body": "Create an initial application with foundation capabilities already in place, not bolted on later."
+        "body": "Create the initial application with foundation capabilities already in place, not bolted on later."
       },
       {
         "icon": "↗",
         "title": "Evolve",
-        "body": "Continue inside the platform with workflows, views, security, and UI changes as the system grows."
+        "body": "Keep changing the system with platform tools, or bring your favorite AI tool for extension work."
+      }
+    ]
+  },
+  "sectionStack": {
+    "id": "stack",
+    "label": "The stack",
+    "title": "From spec to running business system",
+    "copyHtml": "Build the specification with platform AI, generate the model and application, then evolve in the platform or with your own AI tools.",
+    "footnote": "Specification and model generation happen in Anybuild. Evolution can stay in the platform or use external AI under the same rules.",
+    "layers": [
+      {
+        "num": "01",
+        "title": "Specification",
+        "copy": "Collaborate with AI inside Anybuild to draft and refine requirements before generation.",
+        "items": ["Prompt & Q&A", "Spec refinement", "Manual edits", "Platform AI"]
+      },
+      {
+        "num": "02",
+        "title": "Model & generation",
+        "copy": "Generate the data model, database, forms, workflows, and UI from the governed specification.",
+        "items": ["ERD", "Entities", "SQL views", "Workflows", "UI"]
+      },
+      {
+        "num": "03",
+        "title": "Evolution",
+        "copy": "Extend the live system with platform tools, or bring external AI for deeper customisation.",
+        "items": ["Platform designers", "SQL & workflows", "Custom UI", "External AI"]
+      }
+    ]
+  },
+  "sectionComparisonTable": {
+    "id": "compare",
+    "label": "Comparison",
+    "title": "Three approaches. One clear path.",
+    "copyHtml": "Traditional development is slow. Raw AI agents are fast but hard to govern.<br />Anybuild combines speed with structure.",
+    "columns": [
+      { "label": "" },
+      { "label": "Traditional custom dev" },
+      { "label": "AI code generators" },
+      { "label": "Anybuild", "highlight": true }
+    ],
+    "rows": [
+      {
+        "dimension": "Initial speed",
+        "values": ["Slow", "Fast", "Fast with structure"]
+      },
+      {
+        "dimension": "Maintainability",
+        "values": ["Depends on team", "Often fragile", "Model-driven evolution"]
+      },
+      {
+        "dimension": "Governance",
+        "values": ["Manual", "Weak", "Built into platform"]
+      },
+      {
+        "dimension": "After version one",
+        "values": ["Rebuild risk", "Refactor chaos", "Extend on same foundation"]
+      }
+    ]
+  },
+  "sectionProducts": {
+    "id": "products",
+    "label": "Platform",
+    "title": "One platform. Apps on top.",
+    "copyHtml": "Three layers to build, run, and distribute. Production applications run on the same foundation.",
+    "items": [
+      {
+        "kicker": "Runtime",
+        "title": "Anybuild Server",
+        "href": "platform.html",
+        "copy": "The governed runtime behind every application: hosting, security, permissions, and APIs.",
+        "bullets": ["Secure runtime", "Multi-tenant architecture", "Identity & governance", "Integration layer"]
+      },
+      {
+        "kicker": "Build",
+        "title": "Anybuild Creator",
+        "href": "platform.html#lifecycle",
+        "copy": "Collaborate with AI to build the spec, generate the data model, and ship the first version, then evolve on the same foundation.",
+        "bullets": ["Spec-driven development", "ERD & data model", "Generated UI & workflows", "Full lifecycle control"]
+      },
+      {
+        "kicker": "Distribution",
+        "title": "Anybuild Store",
+        "comingSoon": true,
+        "copy": "Publish vertical solutions and partner apps, with distribution and monetisation without rebuilding infrastructure.",
+        "bullets": ["Publish applications", "Partner revenue share", "Global distribution", "Recurring income"]
+      },
+      {
+        "kicker": "Optional",
+        "title": "Onedb Smartsuite",
+        "href": "onedb-smartsuite.html",
+        "optional": true,
+        "copy": "Production ERP and CRM on the same model-driven foundation. Can optionally come with the platform.",
+        "bullets": ["Finance & operations", "Sales & CRM", "Shared entities", "Extend per organisation"]
+      }
+    ]
+  },
+  "sectionEnterprise": {
+    "id": "enterprise",
+    "label": "Enterprise",
+    "title": "Replace complexity with adaptability",
+    "copyHtml": "Enterprise software is often expensive to change, split across tools, and slow to adapt.<br />Anybuild replaces project-by-project rebuilds with a model that evolves in place.",
+    "problemsTitle": "The problem today",
+    "solutionsTitle": "The Anybuild approach",
+    "problems": [
+      {
+        "title": "Expensive to change",
+        "copy": "Licensing, customisation, and maintenance consume budgets that should drive growth."
+      },
+      {
+        "title": "Rigid structures",
+        "copy": "Every adaptation becomes a project: consultants, change orders, and system freezes."
+      },
+      {
+        "title": "Fragmented tools",
+        "copy": "Disconnected systems mean reconciliation tax on every team and duplicated data models."
+      },
+      {
+        "title": "Slow to adapt",
+        "copy": "By the time software reflects a new reality, the business has already moved on."
+      }
+    ],
+    "solutions": [
+      {
+        "title": "Fully adaptable",
+        "copy": "ERP, CRM, workflows, and line-of-business apps on one unified platform."
+      },
+      {
+        "title": "AI where it helps",
+        "copy": "Accelerate definition and change, while the platform keeps structure and rules."
+      },
+      {
+        "title": "Single source of truth",
+        "copy": "Shared model across data, UI, workflows, and reporting with governance built in."
+      },
+      {
+        "title": "Continuous evolution",
+        "copy": "Adapt systems as the business changes, without rebuilding or re-platforming."
+      }
+    ],
+    "useCases": [
+      {
+        "num": "01",
+        "title": "Finance automation",
+        "copy": "Invoice processing, reconciliation, and approvals with audit trails and compliance governance."
+      },
+      {
+        "num": "02",
+        "title": "Sales & CRM",
+        "copy": "Adaptive CRM that reflects your sales motion: pipeline, forecasting, and customer intelligence."
+      },
+      {
+        "num": "03",
+        "title": "Operations & workflows",
+        "copy": "Cross-functional processes from procurement to fulfilment in one governed system."
+      },
+      {
+        "num": "04",
+        "title": "Industry platforms",
+        "copy": "Purpose-built vertical systems without starting from scratch or settling for generic software."
+      }
+    ]
+  },
+  "sectionTestimonials": {
+    "id": "testimonials",
+    "label": "Customer stories",
+    "title": "Built and evolved on Anybuild",
+    "copyHtml": "Teams use Anybuild to ship faster and keep systems adaptable over time.",
+    "quotes": [
+      {
+        "quote": "I am blown away with the speed that anybuild can change things, anybuild is a great partner with a great tool",
+        "initials": "AG",
+        "name": "Andreas Gjærum",
+        "role": "CTO · Medcube"
+      },
+      {
+        "quote": "Anybuild / Onedb are incredible, they delivered a fully functioning complex App in 6 weeks, the previous developer took 1 year and failed.",
+        "initials": "EP",
+        "name": "Ed Prow MD",
+        "role": "Founder · Pottingshed"
+      },
+      {
+        "quote": "We built our business on Anybuild / Onedb. It has been a fantastic platform for us enabling us to quickly launch and to provide an excellent valuable compliance service to many satisfied customers",
+        "initials": "MS",
+        "name": "Manfred Schraepler",
+        "role": "Founder · Catara Capital"
       }
     ]
   },
@@ -267,24 +456,25 @@
     ]
   },
   "sectionComplementary": {
-    "label": "Complementary tools",
-    "titleHtml": "Open to external AI.<br />Closed on system rules.",
-    "copyHtml": "External AI tools accelerate UI and backend work.<br />Anybuild validates, normalizes, and runs the system.",
+    "label": "External AI for evolution",
+    "titleHtml": "Platform tools first.<br />Your AI when you need it.",
+    "copyHtml": "After the initial build, extend the system with Anybuild designers, or use your favorite AI tool and bring work back under platform control.",
+    "aiTools": ["External AI", "Code assistants", "Your workflow"],
     "cards": [
       {
         "icon": "⌘",
-        "title": "Use any generation tool",
-        "body": "Teams can work with their preferred external AI tooling without turning the platform into unmanaged code hosting."
+        "title": "Evolve with platform tools",
+        "body": "Change the model, workflows, views, security, and UI inside Anybuild without leaving the governed runtime."
       },
       {
         "icon": "⟲",
-        "title": "Push back into the platform",
-        "body": "Generated artifacts are brought back under platform control, where contracts and platform constraints are enforced."
+        "title": "Or use external AI",
+        "body": "For deeper UI or code work, use your preferred AI tool, then import artifacts back into the platform."
       },
       {
         "icon": "▣",
-        "title": "Keep the system coherent",
-        "body": "The result is flexibility for builders and consistency for the business: freedom in creation, discipline in execution."
+        "title": "Same rules either way",
+        "body": "Whether you edit in the platform or via external AI, structure, validation, and runtime stay under Anybuild control."
       }
     ]
   },

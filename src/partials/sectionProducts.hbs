@@ -1,0 +1,40 @@
+<section id="{{id}}" class="section-band">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">{{label}}</div>
+      <h2>{{title}}</h2>
+      <p class="section-copy">{{{copyHtml}}}</p>
+    </div>
+
+    <div class="product-grid">
+      {{#each items}}
+        {{#if href}}
+          <a class="product-card{{#if optional}} product-card--optional{{/if}}" href="{{href}}">
+        {{else}}
+          <div class="product-card product-card--static{{#if optional}} product-card--optional{{/if}}">
+        {{/if}}
+          <div class="product-card-top">
+            <div class="product-card-kicker">{{kicker}}</div>
+            {{#if comingSoon}}
+              <span class="product-card-soon">Coming soon</span>
+            {{/if}}
+          </div>
+          <h3>{{title}}</h3>
+          <p>{{copy}}</p>
+          <ul class="product-card-list">
+            {{#each bullets}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          {{#if href}}
+            <span class="product-card-link">Learn more →</span>
+          {{/if}}
+        {{#if href}}
+          </a>
+        {{else}}
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</section>

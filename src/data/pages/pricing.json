@@ -4,6 +4,7 @@
   "includeHeroScript": false,
   "includePricingInquiryScript": true,
   "includePricingCurrencyScript": true,
+  "hidePrices": true,
   "hero": {
     "kicker": "Anybuild",
     "title": "Pricing",
@@ -55,11 +56,11 @@
           },
           {
             "label": "Automation workflows",
-            "value": "—"
+            "value": "-"
           },
           {
             "label": "Public APIs & integrations",
-            "value": "—"
+            "value": "-"
           },
           {
             "label": "Included credits",
@@ -117,7 +118,7 @@
           },
           {
             "label": "Public APIs & integrations",
-            "value": "—"
+            "value": "-"
           },
           {
             "label": "Included credits",

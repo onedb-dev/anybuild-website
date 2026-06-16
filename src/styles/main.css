@@ -2857,7 +2857,7 @@ h2 {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #0a1322;
+  background: #ffffff;
   height: clamp(330px, 40vw, 490px);
   width: 100%;
 }
@@ -2895,24 +2895,15 @@ h2 {
   bottom: 16px;
   z-index: 2;
   max-width: min(680px, 95%);
-  background: rgba(10, 18, 32, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-left: 3px solid var(--accent);
   border-radius: 14px;
-  padding: 12px 14px;
-  backdrop-filter: blur(5px);
-}
-
-.section-storyboard .storyboard-stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 19, 34, 0.05) 0%,
-    rgba(10, 19, 34, 0.35) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
+  padding: 14px 16px;
+  box-shadow:
+    0 4px 6px rgba(17, 24, 39, 0.04),
+    0 12px 28px rgba(17, 24, 39, 0.14);
+  transition: opacity 0.42s ease;
 }
 
 .section-storyboard .storyboard-step {
@@ -2929,22 +2920,20 @@ h2 {
   margin: 0 0 6px;
   font-size: 20px;
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .section-storyboard .storyboard-meta p {
   margin: 0;
-  color: #d5e0ef;
+  color: var(--text);
   font-size: 14px;
-  line-height: 1.5;
-}
-
-.section-storyboard .storyboard-meta {
-  transition: opacity 0.42s ease;
+  line-height: 1.55;
+  opacity: 0.72;
 }
 
 .section-storyboard .storyboard.is-fading-out .storyboard-image,
 .section-storyboard .storyboard.is-fading-out .storyboard-meta {
-  opacity: 0.24;
+  opacity: 0;
 }
 
 .section-storyboard .storyboard-controls {
@@ -2961,7 +2950,7 @@ h2 {
   border-radius: 999px;
   border: 0;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--line);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -2974,7 +2963,7 @@ h2 {
   margin: 10px 0 2px;
   text-align: center;
   font-size: 12px;
-  color: #9fb0c6;
+  color: var(--muted);
 }
 
 .section-storyboard .storyboard.is-intro .storyboard-image-button {
@@ -2987,16 +2976,17 @@ h2 {
   top: 50%;
   bottom: auto;
   transform: translate(-50%, -50%);
-  position: absolute;
-  text-align: center;
-  background: transparent;
-  border: 0;
-  backdrop-filter: none;
-  padding: 0;
+  text-align: left;
+  max-width: min(560px, 88%);
 }
 
 .section-storyboard .storyboard.is-intro .storyboard-meta h3 {
-  font-size: clamp(22px, 3.2vw, 32px);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.section-storyboard .storyboard.is-intro .storyboard-meta p {
+  opacity: 0.72;
 }
 
 .section-storyboard .storyboard-modal {
@@ -3078,11 +3068,16 @@ h2 {
   .section-storyboard .storyboard-meta {
     position: static;
     max-width: none;
+    transform: none;
     border-radius: 0;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
-    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .section-storyboard .storyboard.is-intro .storyboard-meta {
+    transform: none;
   }
 }
 
@@ -3775,27 +3770,6 @@ h2 {
 
 .faq-empty {
   border-color: var(--line) !important;
-}
-
-.section-storyboard .storyboard-stage {
-  background: var(--bg-soft) !important;
-}
-
-.section-storyboard .storyboard-meta {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-color: var(--line) !important;
-}
-
-.section-storyboard .storyboard-meta p {
-  color: var(--muted) !important;
-}
-
-.section-storyboard .storyboard-dot {
-  background: var(--line) !important;
-}
-
-.section-storyboard .storyboard-note {
-  color: var(--muted) !important;
 }
 
 @media (max-width: 1080px) {

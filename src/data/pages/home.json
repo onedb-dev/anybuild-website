@@ -2,6 +2,7 @@
   "title": "Anybuild - Model-Driven Platform for Business Systems",
   "description": "Build production business systems in hours on a model-driven platform with security, workflows, reporting, and SQL views included. AI-accelerated where useful; you stay in control.",
   "includeHeroScript": true,
+  "hideTestimonials": true,
   "hero": {
     "kicker": "Model-Driven Platform for Business Systems",
     "headlineHtml": "Build production systems<br />in hours",

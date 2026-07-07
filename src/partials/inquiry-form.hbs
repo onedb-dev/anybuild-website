@@ -21,13 +21,26 @@
 
   <div class="inquiry-form-fields">
     <div class="inquiry-field">
-      <label class="inquiry-label" for="inquiry-name">Full name <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <label class="inquiry-label" for="inquiry-first-name">First name <span class="inquiry-req" aria-hidden="true">*</span></label>
       <input
         class="inquiry-input"
         type="text"
-        id="inquiry-name"
-        name="full_name"
-        autocomplete="name"
+        id="inquiry-first-name"
+        name="first_name"
+        autocomplete="given-name"
+        required
+        aria-required="true"
+      />
+    </div>
+
+    <div class="inquiry-field">
+      <label class="inquiry-label" for="inquiry-last-name">Last name <span class="inquiry-req" aria-hidden="true">*</span></label>
+      <input
+        class="inquiry-input"
+        type="text"
+        id="inquiry-last-name"
+        name="last_name"
+        autocomplete="family-name"
         required
         aria-required="true"
       />
@@ -46,16 +59,43 @@
       />
     </div>
 
-    <div class="inquiry-field inquiry-field--full">
-      <label class="inquiry-label" for="inquiry-org">{{inquiryForm.organizationLabel}}</label>
-      <input
-        class="inquiry-input"
-        type="text"
-        id="inquiry-org"
-        name="organization"
-        autocomplete="organization"
-      />
-    </div>
+    {{#if inquiryForm.showPassword}}
+      <div class="inquiry-field">
+        <label class="inquiry-label" for="inquiry-password">Password <span class="inquiry-req" aria-hidden="true">*</span></label>
+        <input
+          class="inquiry-input"
+          type="password"
+          id="inquiry-password"
+          name="password"
+          autocomplete="new-password"
+          required
+          aria-required="true"
+          minlength="8"
+        />
+      </div>
+
+      <div class="inquiry-field inquiry-field--full">
+        <label class="inquiry-label" for="inquiry-org">{{inquiryForm.organizationLabel}}</label>
+        <input
+          class="inquiry-input"
+          type="text"
+          id="inquiry-org"
+          name="organization"
+          autocomplete="organization"
+        />
+      </div>
+    {{else}}
+      <div class="inquiry-field">
+        <label class="inquiry-label" for="inquiry-org">{{inquiryForm.organizationLabel}}</label>
+        <input
+          class="inquiry-input"
+          type="text"
+          id="inquiry-org"
+          name="organization"
+          autocomplete="organization"
+        />
+      </div>
+    {{/if}}
 
     {{#if inquiryForm.showPackageSelect}}
       <div class="inquiry-field inquiry-field--full">
@@ -94,7 +134,8 @@
       </div>
     {{/if}}
 
-    <div class="inquiry-field inquiry-field--full">
+    {{#unless inquiryForm.hideSubjectField}}
+    <div class="inquiry-field inquiry-field--full" data-inquiry-subject-field>
       <label class="inquiry-label" for="inquiry-subject">{{inquiryForm.subjectLabel}} <span class="inquiry-req" aria-hidden="true">*</span></label>
       <input
         class="inquiry-input"
@@ -105,11 +146,17 @@
         aria-required="true"
       />
     </div>
+    {{/unless}}
 
-    <div class="inquiry-field inquiry-field--full">
-      <label class="inquiry-label" for="inquiry-message">{{inquiryForm.messageLabel}} <span class="inquiry-req" aria-hidden="true">*</span></label>
+    <div class="inquiry-field inquiry-field--full" data-inquiry-message-block>
+      <label class="inquiry-label" for="inquiry-message" id="inquiry-message-label">
+        {{inquiryForm.messageLabel}} <span class="inquiry-req" aria-hidden="true">*</span>
+      </label>
+      <p class="inquiry-prompt-help" data-inquiry-prompt-help hidden>
+        You can edit this before you submit. Once your environment is ready, this will be the starting prompt and you can refine it again in the wizard.
+      </p>
       <textarea
-        class="inquiry-textarea"
+        class="inquiry-textarea inquiry-prompt-input"
         id="inquiry-message"
         name="message"
         rows="6"

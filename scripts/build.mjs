@@ -292,6 +292,7 @@ write("dist/pricing-currency.js", read("src/scripts/pricing-currency.js"));
 write("dist/platform-expand.js", read("src/scripts/platform-expand.js"));
 write("dist/faq-search.js", read("src/scripts/faq-search.js"));
 write("dist/inquiry-form.js", read("src/scripts/inquiry-form.js"));
+write("dist/activation-status.js", read("src/scripts/activation-status.js"));
 write("dist/hero-mock.js", read("src/scripts/hero-mock.js"));
 copyDir("src/assets", "dist/assets");
 
@@ -314,6 +315,7 @@ const pages = [
   ["about.html", "src/data/pages/about.json", "src/pages/about-body.hbs"],
   ["demo.html", "src/data/pages/demo.json", "src/pages/inquiry-page-body.hbs"],
   ["try.html", "src/data/pages/try.json", "src/pages/inquiry-page-body.hbs"],
+  ["activate.html", "src/data/pages/activate.json", "src/pages/activate-body.hbs"],
   ["use-cases.html", "src/data/pages/use-cases.json", "src/pages/use-cases-body.hbs"],
 ];
 

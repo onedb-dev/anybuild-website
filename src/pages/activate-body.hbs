@@ -1,0 +1,52 @@
+<div class="page-inquiry page-activate">
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">{{hero.kicker}}</div>
+      <h1>{{{hero.headlineHtml}}}</h1>
+      <p class="hero-copy">{{{hero.copyHtml}}}</p>
+    </div>
+  </section>
+
+  <section class="page-inquiry-section" aria-labelledby="activate-status-title">
+    <div class="container page-inquiry-inner">
+      <div class="inquiry-form card activate-status" data-activate-status>
+        <div class="inquiry-form-header">
+          <h2 class="inquiry-form-title" id="activate-status-title">Setting up your environment</h2>
+          <p class="inquiry-form-lead" data-activate-lead>
+            We are preparing your Anybuild workspace. You will be redirected when activation completes.
+          </p>
+        </div>
+
+        <ol class="activate-steps" aria-label="Activation progress">
+          {{#each activate.steps}}
+            <li
+              class="activate-step"
+              data-activate-step="{{id}}"
+              data-state="pending"
+              aria-current="false"
+            >
+              <span class="activate-step-indicator" aria-hidden="true"></span>
+              <span class="activate-step-body">
+                <span class="activate-step-label">{{label}}</span>
+                <span class="activate-step-status" data-activate-step-status hidden></span>
+              </span>
+            </li>
+          {{/each}}
+        </ol>
+
+        <div
+          class="inquiry-form-feedback activate-feedback"
+          data-activate-feedback
+          hidden
+          role="alert"
+          aria-live="assertive"
+          tabindex="-1"
+        ></div>
+
+        <div class="activate-actions" data-activate-actions hidden>
+          <a class="btn secondary" href="{{activate.supportHref}}">{{activate.supportLabel}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

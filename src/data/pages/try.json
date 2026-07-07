@@ -6,14 +6,15 @@
   "hero": {
     "kicker": "Try",
     "headlineHtml": "Try for free",
-    "copyHtml": "Request access to explore Anybuild. We will confirm by email."
+    "copyHtml": "Request access to explore Anybuild. We will email you an activation link when your environment is ready."
   },
   "inquiryForm": {
     "mode": "trial",
     "intent": "trial",
     "heading": "Request access",
-    "lead": "We will confirm your request and send next steps by email.",
+    "lead": "Submit your details below. We will email you when your workspace is ready to activate.",
     "submitLabel": "Request access",
+    "showPassword": true,
     "showPriority": false,
     "showPackageSelect": true,
     "packageLabel": "Package",
@@ -31,8 +32,8 @@
       { "value": "erp", "label": "Application - ERP" },
       { "value": "smartsuite", "label": "Application - Smartsuite" }
     ],
-    "subjectLabel": "What you want to explore",
-    "messageLabel": "Use case and any constraints",
+    "hideSubjectField": true,
+    "messageLabel": "What kind of Apps are you interested in creating?",
     "organizationLabel": "Company (optional)"
   }
 }

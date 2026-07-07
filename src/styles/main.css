@@ -2807,6 +2807,8 @@ h2 {
 
 .inquiry-form-actions {
   margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .inquiry-form-feedback {
@@ -2827,6 +2829,19 @@ h2 {
   color: #047857;
 }
 
+.inquiry-form-feedback.is-success a {
+  color: #047857;
+  font-weight: 600;
+}
+
+.inquiry-form-feedback.is-success p {
+  margin: 0 0 0.75em;
+}
+
+.inquiry-form-feedback.is-success p:last-child {
+  margin-bottom: 0;
+}
+
 .inquiry-form-feedback.is-error {
   border-color: #fecaca;
   background: #fef2f2;
@@ -2837,6 +2852,181 @@ h2 {
   opacity: 0.65;
   cursor: not-allowed;
   transform: none;
+}
+
+.inquiry-prompt-help {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.inquiry-form.is-prompt-mode [data-inquiry-subject-field] {
+  display: none !important;
+}
+
+.inquiry-form.is-trial-submitted .inquiry-form-header,
+.inquiry-form.is-trial-submitted .inquiry-form-fields,
+.inquiry-form.is-trial-submitted .inquiry-form-actions {
+  display: none !important;
+}
+
+.inquiry-form.is-trial-submitted .inquiry-form-feedback {
+  margin-top: 0;
+}
+
+.inquiry-form.is-prompt-mode .inquiry-prompt-input {
+  min-height: 140px;
+}
+
+/* .  Activate / provisioning status .  */
+.activate-status {
+  padding-bottom: 24px;
+}
+
+.activate-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.activate-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.activate-step[data-state="in_progress"] {
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.16);
+}
+
+.activate-step-indicator {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #fff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.activate-step[data-state="done"] .activate-step-indicator {
+  border-color: #6366f1;
+  background: #6366f1;
+}
+
+.activate-step[data-state="done"] .activate-step-indicator::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.activate-step[data-state="in_progress"] .activate-step-indicator {
+  border-color: rgba(99, 102, 241, 0.25);
+  border-top-color: #6366f1;
+  border-right-color: #6366f1;
+  animation: activate-spin 0.75s linear infinite;
+}
+
+.activate-step[data-state="pending"] .activate-step-indicator {
+  background: #f8fafc;
+}
+
+.activate-step-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.activate-step-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.activate-step[data-state="pending"] .activate-step-label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.activate-step[data-state="in_progress"] .activate-step-label {
+  color: #4338ca;
+}
+
+.activate-step-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #4338ca;
+  background: rgba(99, 102, 241, 0.14);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.activate-step-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6366f1;
+  animation: activate-pulse 1.2s ease-in-out infinite;
+}
+
+.activate-step[data-state="done"] .activate-step-status,
+.activate-step[data-state="pending"] .activate-step-status {
+  display: none;
+}
+
+.activate-feedback {
+  margin-top: 18px;
+}
+
+.activate-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes activate-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes activate-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .faq-empty {

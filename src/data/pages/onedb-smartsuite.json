@@ -19,7 +19,7 @@
     },
     "secondary": {
       "label": "Try for free",
-      "href": "try.html"
+      "href": "try.html?package=smartsuite&include_smartsuite=true"
     }
   },
   "businessSystem": {
@@ -203,7 +203,7 @@
     },
     "secondary": {
       "label": "Try for free",
-      "href": "try.html"
+      "href": "try.html?package=smartsuite&include_smartsuite=true"
     }
   }
 }

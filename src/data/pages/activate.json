@@ -1,0 +1,21 @@
+{
+  "title": "Preparing your workspace | Anybuild",
+  "description": "Your Anybuild environment is being provisioned and activated.",
+  "noindex": true,
+  "includeActivationStatusScript": true,
+  "hero": {
+    "kicker": "Workspace",
+    "headlineHtml": "Preparing your workspace",
+    "copyHtml": "This usually takes a few minutes. Keep this tab open and we will redirect you automatically when your environment is ready."
+  },
+  "activate": {
+    "steps": [
+      { "id": "provision", "label": "Provisioning your environment" },
+      { "id": "activate", "label": "Activating your workspace" },
+      { "id": "redirect", "label": "Redirecting" }
+    ],
+    "timeoutMessage": "This is taking longer than expected. Please try again later or contact support if the problem continues.",
+    "supportHref": "support.html",
+    "supportLabel": "Contact support"
+  }
+}

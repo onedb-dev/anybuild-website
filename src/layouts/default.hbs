@@ -112,5 +112,8 @@
   <script src="https://www.google.com/recaptcha/api.js?render=6LdpodcqAAAAAECRuoE_Mb5vAlmeWfWTIZPwohQy" async defer></script>
   <script src="{{assetPrefix}}inquiry-form.js" defer></script>
   {{/if}}
+  {{#if includeActivationStatusScript}}
+  <script src="{{assetPrefix}}activation-status.js" defer></script>
+  {{/if}}
 </body>
 </html>

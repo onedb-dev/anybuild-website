@@ -32,6 +32,29 @@
     return t === "" ? null : t;
   }
 
+  function validatePassword(password) {
+    var value = String(password || "").trim();
+    if (!value) {
+      return "Password is required.";
+    }
+    if (value.length < 8 || value.length > 32) {
+      return "Password must be between 8 and 32 characters long.";
+    }
+    if (!/[A-Z]/.test(value)) {
+      return "Password must contain at least one uppercase letter.";
+    }
+    if (!/[a-z]/.test(value)) {
+      return "Password must contain at least one lowercase letter.";
+    }
+    return null;
+  }
+
+  function syncPasswordValidity(passwordField) {
+    if (!passwordField) return;
+    var error = validatePassword(passwordField.value);
+    passwordField.setCustomValidity(error || "");
+  }
+
   function isSmartsuitePackageId(pkg) {
     return pkg === "crm" || pkg === "erp" || pkg === "smartsuite";
   }
@@ -308,6 +331,11 @@
       e.preventDefault();
       clearFeedback(feedback);
 
+      var passwordField = form.querySelector('[name="password"]');
+      if (passwordField) {
+        syncPasswordValidity(passwordField);
+      }
+
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
@@ -316,7 +344,6 @@
       var mode = form.getAttribute("data-form-mode") || "contact";
       var fd = new FormData(form);
       var organization = trimOrNull(fd.get("organization"));
-      var passwordField = form.querySelector('[name="password"]');
       var password = passwordField
         ? String(fd.get("password") || "").trim()
         : null;
@@ -382,12 +409,13 @@
         var trialCompleted = false;
 
         if (isTrial) {
-          if (!payload.password) {
-            setFeedback(
-              feedback,
-              "Password is required to create your workspace.",
-              "is-error"
-            );
+          var passwordError = validatePassword(payload.password);
+          if (passwordError) {
+            setFeedback(feedback, passwordError, "is-error");
+            if (passwordField) {
+              passwordField.setCustomValidity(passwordError);
+              passwordField.reportValidity();
+            }
             if (submitBtn) {
               submitBtn.disabled = false;
               submitBtn.removeAttribute("aria-busy");
@@ -573,6 +601,13 @@
 
     if (isPromptIntent(intent) && msg && String(msg.value || "").trim()) {
       applyPromptMode(form, String(msg.value).trim());
+    }
+
+    var passwordInput = form.querySelector('[name="password"]');
+    if (passwordInput) {
+      passwordInput.addEventListener("input", function () {
+        syncPasswordValidity(passwordInput);
+      });
     }
   });
 })();

@@ -2861,6 +2861,13 @@ h2 {
   color: var(--muted);
 }
 
+.inquiry-field-hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .inquiry-form.is-prompt-mode [data-inquiry-subject-field] {
   display: none !important;
 }

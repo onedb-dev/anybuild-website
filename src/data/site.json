@@ -88,6 +88,10 @@
         ]
       }
     ],
+    "docs": {
+      "label": "Docs",
+      "href": "/docs/"
+    },
     "actions": [
       {
         "label": "Book a demo",

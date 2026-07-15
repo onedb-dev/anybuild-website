@@ -208,6 +208,44 @@ nav {
   align-items: center;
 }
 
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.nav-docs {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.nav-docs:hover,
+.nav-docs:focus-visible {
+  color: var(--accent);
+}
+
+.nav-docs-icon {
+  flex-shrink: 0;
+  opacity: 0.72;
+}
+
+.nav-mobile-docs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
 .nav-toggle {
   display: none;
   flex-shrink: 0;
@@ -1472,7 +1510,7 @@ h2 {
   }
 
   .nav-links,
-  .nav-actions {
+  .nav-end {
     display: none;
   }
 

@@ -32,10 +32,21 @@
         {{/each}}
       </div>
 
-      <div class="nav-actions">
-        {{#each nav.actions}}
-          <a class="btn {{variant}}" href="{{href}}">{{label}}</a>
-        {{/each}}
+      <div class="nav-end">
+        {{#if nav.docs}}
+          <a class="nav-docs" href="{{nav.docs.href}}">
+            <svg class="nav-docs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{nav.docs.label}}
+          </a>
+        {{/if}}
+
+        <div class="nav-actions">
+          {{#each nav.actions}}
+            <a class="btn {{variant}}" href="{{href}}">{{label}}</a>
+          {{/each}}
+        </div>
       </div>
 
       <button
@@ -87,6 +98,14 @@
           <a class="nav-mobile-link" href="{{href}}">{{label}}</a>
         {{/if}}
       {{/each}}
+      {{#if nav.docs}}
+        <a class="nav-mobile-link nav-mobile-docs" href="{{nav.docs.href}}">
+          <svg class="nav-docs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {{nav.docs.label}}
+        </a>
+      {{/if}}
     </div>
     <div class="nav-mobile-actions">
       {{#each nav.actions}}

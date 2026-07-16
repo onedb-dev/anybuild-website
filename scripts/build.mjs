@@ -105,25 +105,38 @@ function standardizePageTitle(title, brandName = "Anybuild") {
 }
 
 function writeSitemap(siteUrl, htmlFilenames) {
-  const base = (siteUrl || "").trim();
+  const base = (siteUrl || "").trim().replace(/\/$/, "");
   if (!base) {
     console.warn("siteUrl missing; sitemap.xml not written.");
     return;
   }
   const lastmod = new Date().toISOString().split("T")[0];
-  const lines = [
+  const urlsetLines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ];
   for (const filename of htmlFilenames) {
     const loc = escapeXml(canonicalUrl(siteUrl, filename));
-    lines.push("  <url>");
-    lines.push(`    <loc>${loc}</loc>`);
-    lines.push(`    <lastmod>${lastmod}</lastmod>`);
-    lines.push("  </url>");
+    urlsetLines.push("  <url>");
+    urlsetLines.push(`    <loc>${loc}</loc>`);
+    urlsetLines.push(`    <lastmod>${lastmod}</lastmod>`);
+    urlsetLines.push("  </url>");
   }
-  lines.push("</urlset>");
-  write("dist/sitemap.xml", lines.join("\n") + "\n");
+  urlsetLines.push("</urlset>");
+  write("dist/sitemap-0.xml", urlsetLines.join("\n") + "\n");
+
+  const indexLines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    "  <sitemap>",
+    `    <loc>${escapeXml(`${base}/sitemap-0.xml`)}</loc>`,
+    "  </sitemap>",
+    "  <sitemap>",
+    `    <loc>${escapeXml(`${base}/docs/sitemap-0.xml`)}</loc>`,
+    "  </sitemap>",
+    "</sitemapindex>",
+  ];
+  write("dist/sitemap.xml", indexLines.join("\n") + "\n");
 }
 
 function writeRobotsTxt(siteUrl) {
@@ -327,5 +340,5 @@ writeSitemap(site.siteUrl, ["index.html", ...pages.map((p) => p[0])]);
 writeRobotsTxt(site.siteUrl);
 
 console.log(
-  "Build complete: dist/ (flat HTML, main.css, sitemap.xml, robots.txt, hero-mock.js)"
+  "Build complete: dist/ (flat HTML, main.css, sitemap.xml, sitemap-0.xml, robots.txt, hero-mock.js)"
 );
